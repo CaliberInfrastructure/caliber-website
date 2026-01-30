@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd caliber-ai-infrastructure && npm install && npm run build",
+  "outputDirectory": "caliber-ai-infrastructure/dist",
+  "framework": "vite",
+  "installCommand": "cd caliber-ai-infrastructure && npm install"
+}
