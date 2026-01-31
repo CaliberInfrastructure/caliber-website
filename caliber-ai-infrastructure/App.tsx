@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Calculator from './components/Calculator';
 import Pricing from './components/Pricing';
 import ProblemSection from './components/ProblemSection';
@@ -212,6 +213,7 @@ const App: React.FC = () => {
           </div>
         </div>
       </footer>
+      <Analytics />
     </div>
   );
 };
