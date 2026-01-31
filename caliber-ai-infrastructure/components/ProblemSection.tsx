@@ -54,12 +54,15 @@ const ProblemSection: React.FC = () => {
     <section id="problem" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
-          <p className="text-slate-500 font-medium max-w-2xl mx-auto text-lg mb-4">
-            Inefficiencies that are completely fixable.
-          </p>
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter mb-6">
-            Ways Your Med Spa Is <span className="text-red-500">Bleeding Revenue</span>
+          <div className="inline-block px-5 py-2 mb-8 text-[10px] font-black tracking-[0.3em] text-red-600 uppercase bg-red-50 border border-red-100 rounded-full">
+            The Hidden Revenue Crisis
+          </div>
+          <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-6">
+            5 Ways Your Med Spa Is <span className="text-red-500 italic">Bleeding Revenue</span>
           </h2>
+          <p className="text-slate-500 font-medium max-w-2xl mx-auto text-lg">
+            The average med spa loses <span className="text-slate-900 font-bold">$25,000–$35,000 every month</span> to operational inefficiencies that are completely fixable.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
