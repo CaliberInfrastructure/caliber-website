@@ -33,7 +33,7 @@ export const TIERS: Record<ServiceTier, TierDetails> = {
   [ServiceTier.FULL_AUTOMATION]: {
     name: "Full Automation",
     monthlyFee: 2000,
-    setupFee: 8500,
+    setupFee: 10000,
     description: "Complete AI Ecosystem. 24/7 Voice AI reception that qualifies and books.",
     valueMonthly: 26300,
     features: [

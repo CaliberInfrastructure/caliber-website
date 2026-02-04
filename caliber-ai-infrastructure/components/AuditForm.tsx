@@ -59,45 +59,45 @@ const AuditForm: React.FC = () => {
   };
 
   return (
-    <section id="audit" className="py-24 relative overflow-hidden">
+    <section id="audit" className="py-24 relative overflow-hidden bg-slate-50">
        {/* Background Grid Pattern */}
-       <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
+       <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #0B1221 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-          
+
           {/* LEFT CONTENT */}
-          <div className="text-white pt-8">
-            <div className="inline-block px-4 py-1.5 mb-8 text-[10px] font-black tracking-[0.3em] text-cyan-400 uppercase bg-cyan-500/10 border border-cyan-500/20 rounded-full">
+          <div className="text-slate-900 pt-8">
+            <div className="inline-block px-4 py-1.5 mb-8 text-[10px] font-black tracking-[0.3em] text-cyan-700 uppercase bg-cyan-50 border border-cyan-100 rounded-full">
               Free Revenue Audit
             </div>
             <h2 className="text-6xl font-black tracking-tighter mb-8 leading-[1.05]">
-              We'll Show You <span className="text-cyan-400">Exactly</span> How Much You're Losing
+              We'll Show You <span className="text-[#0097B2]">Exactly</span> How Much You're Losing
             </h2>
-            <p className="text-slate-400 text-xl mb-16 leading-relaxed font-medium">
+            <p className="text-slate-600 text-xl mb-16 leading-relaxed font-medium">
               No sales pitch. No obligation. Just a clear, quantified report showing where revenue is leaking from your med spa—and how to capture it.
             </p>
 
             <div className="mb-12">
-              <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] mb-10">What we'll analyze</p>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-10">What we'll analyze</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {ANALYSIS_CARDS.map((card, i) => (
-                  <div key={i} className="bg-white/5 border border-white/10 rounded-[2rem] p-6 hover:bg-white/10 transition group">
-                    <div className="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-6 border border-cyan-500/20">
-                      <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={card.icon}></path></svg>
+                  <div key={i} className="bg-white border border-slate-200 rounded-[2rem] p-6 hover:bg-slate-50 hover:border-cyan-200 transition group shadow-sm">
+                    <div className="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center mb-6 border border-cyan-200">
+                      <svg className="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={card.icon}></path></svg>
                     </div>
-                    <h4 className="text-lg font-black text-white mb-1 tracking-tight">{card.title}</h4>
-                    <p className="text-slate-500 text-xs leading-relaxed">{card.desc}</p>
+                    <h4 className="text-lg font-black text-slate-900 mb-1 tracking-tight">{card.title}</h4>
+                    <p className="text-slate-600 text-xs leading-relaxed">{card.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-[#151D2F] border-2 border-[#0097B2]/30 p-8 rounded-[2.5rem]">
-              <p className="text-[10px] font-black text-cyan-400 uppercase tracking-[0.3em] mb-4">Deliverable</p>
-              <p className="text-white text-lg font-bold leading-relaxed">
+            <div className="bg-cyan-50 border-2 border-cyan-200 p-8 rounded-[2.5rem]">
+              <p className="text-[10px] font-black text-cyan-700 uppercase tracking-[0.3em] mb-4">Deliverable</p>
+              <p className="text-slate-900 text-lg font-bold leading-relaxed">
                 Professional 1-2 page report with quantified monthly revenue loss + specific recommendations.
               </p>
             </div>
