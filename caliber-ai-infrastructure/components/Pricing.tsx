@@ -89,7 +89,7 @@ const Pricing: React.FC = () => {
                     <span className="text-slate-400 font-medium text-sm">Your Investment</span>
                     <span className="text-white font-black text-2xl tracking-tighter">$2,000<span className="text-slate-500 font-bold text-sm">/mo</span></span>
                   </div>
-                  <p className="text-slate-500 text-xs font-bold mt-2">+ $8,500 one-time build/setup</p>
+                  <p className="text-slate-500 text-xs font-bold mt-2">+ ${fullAutomation.setupFee.toLocaleString()} one-time build/setup</p>
                 </div>
 
                 {/* Net Recovery - the delta */}
