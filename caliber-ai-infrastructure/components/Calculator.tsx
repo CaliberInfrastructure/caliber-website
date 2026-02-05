@@ -20,15 +20,15 @@ const Calculator: React.FC = () => {
   };
 
   return (
-    <section id="calculator" className="py-24 relative">
+    <section id="calculator" className="py-16 md:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-black text-slate-900 tracking-tight mb-4">Infrastructure Leakage Calculator</h2>
-          <p className="text-slate-500 font-medium italic">Calculations assume 75% Recovery Efficiency on Hot Leads & Repeat Customers</p>
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mb-3 md:mb-4">Infrastructure Leakage Calculator</h2>
+          <p className="text-slate-500 font-medium italic text-sm md:text-base px-4">Calculations assume 75% Recovery Efficiency on Hot Leads & Repeat Customers</p>
         </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-12">
-          <div className="lg:col-span-4 bg-slate-50 p-10 rounded-[3.5rem] border border-slate-100 shadow-sm space-y-8">
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start mb-12">
+          <div className="lg:col-span-4 bg-slate-50 p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-3xl lg:rounded-[3.5rem] border border-slate-100 shadow-sm space-y-6 md:space-y-8">
             <div>
               <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Current Monthly Revenue</label>
               <select 
@@ -43,16 +43,16 @@ const Calculator: React.FC = () => {
               </select>
             </div>
             <div>
-              <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Avg. Treatment Price</label>
+              <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3 md:mb-4">Avg. Treatment Price</label>
               <div className="relative">
-                <span className="absolute left-5 top-5 text-slate-400 font-bold">$</span>
+                <span className="absolute left-4 md:left-5 top-4 md:top-5 text-slate-400 font-bold">$</span>
                 <input
                   type="text"
                   inputMode="numeric"
                   pattern="[0-9]*"
                   value={params.avgTicket}
                   onChange={(e) => handleChange('avgTicket', parseInt(e.target.value) || 0)}
-                  className="w-full p-5 pl-10 rounded-2xl border-none bg-white shadow-md font-bold text-cyan-600 text-xl outline-none focus:ring-2 focus:ring-cyan-500"
+                  className="w-full p-4 md:p-5 pl-8 md:pl-10 rounded-xl md:rounded-2xl border-none bg-white shadow-md font-bold text-cyan-600 text-lg md:text-xl outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
             </div>
@@ -86,50 +86,50 @@ const Calculator: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-8 space-y-6">
-            <div className="bg-slate-900 rounded-[3rem] p-10 text-white shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-red-600 text-white px-8 py-3 text-[10px] font-black uppercase rounded-bl-3xl tracking-widest">Revenue Leakage Detected</div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-6">
+          <div className="lg:col-span-8 space-y-4 md:space-y-6">
+            <div className="bg-slate-900 rounded-2xl md:rounded-3xl lg:rounded-[3rem] p-6 md:p-8 lg:p-10 text-white shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-red-600 text-white px-4 md:px-8 py-2 md:py-3 text-[9px] md:text-[10px] font-black uppercase rounded-bl-2xl md:rounded-bl-3xl tracking-widest">Revenue Leakage Detected</div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mt-4 md:mt-6">
                 <div>
                   <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-2">Total Monthly Leakage</p>
-                  <div className="text-5xl font-black text-red-500 tracking-tighter mb-4">${Math.round(results.totalLossMonthly).toLocaleString()}</div>
+                  <div className="text-4xl sm:text-5xl font-black text-red-500 tracking-tighter mb-4 whitespace-nowrap">${Math.round(results.totalLossMonthly).toLocaleString()}</div>
                   <div className="space-y-2 border-t border-slate-800 pt-4">
-                    <div className="flex justify-between text-xs"><span className="text-slate-500 font-bold uppercase">Missed Calls</span> <span className="font-black text-slate-300">${Math.round(results.missedCallLossMonthly).toLocaleString()}</span></div>
-                    <div className="flex justify-between text-xs"><span className="text-slate-500 font-bold uppercase">No-Shows</span> <span className="font-black text-slate-300">${Math.round(results.noShowLossMonthly).toLocaleString()}</span></div>
+                    <div className="flex justify-between text-xs"><span className="text-slate-500 font-bold uppercase">Missed Calls</span> <span className="font-black text-slate-300 whitespace-nowrap">${Math.round(results.missedCallLossMonthly).toLocaleString()}</span></div>
+                    <div className="flex justify-between text-xs"><span className="text-slate-500 font-bold uppercase">No-Shows</span> <span className="font-black text-slate-300 whitespace-nowrap">${Math.round(results.noShowLossMonthly).toLocaleString()}</span></div>
                   </div>
                 </div>
-                <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10">
+                <div className="bg-white/5 p-6 md:p-8 rounded-xl md:rounded-[2rem] border border-white/10">
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Total Annualized Leakage</p>
-                  <div className="text-6xl font-black text-white tracking-tighter">${Math.round(results.totalLossAnnual).toLocaleString()}</div>
+                  <div className="text-5xl sm:text-6xl font-black text-white tracking-tighter whitespace-nowrap">${Math.round(results.totalLossAnnual).toLocaleString()}</div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-cyan-600 rounded-[3rem] p-10 text-white shadow-2xl relative overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="bg-cyan-600 rounded-2xl md:rounded-3xl lg:rounded-[3rem] p-6 md:p-8 lg:p-10 text-white shadow-2xl relative overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
                 <div>
                   <p className="text-[10px] font-black text-cyan-100 uppercase tracking-widest mb-2">Monthly Recovery Goal</p>
-                  <div className="text-5xl font-black text-white tracking-tighter mb-4">+${Math.round(results.recoveryMonthly).toLocaleString()}</div>
-                  <p className="text-cyan-100 text-sm font-medium leading-relaxed">See exactly where this leakage is happening in your practice.</p>
+                  <div className="text-4xl sm:text-5xl font-black text-white tracking-tighter mb-3 md:mb-4 whitespace-nowrap">+${Math.round(results.recoveryMonthly).toLocaleString()}</div>
+                  <p className="text-cyan-100 text-xs sm:text-sm font-medium leading-relaxed">See exactly where this leakage is happening in your practice.</p>
                 </div>
-                <div className="bg-white/20 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 flex flex-col justify-center">
+                <div className="bg-white/20 backdrop-blur-md p-6 md:p-8 rounded-xl md:rounded-[2rem] border border-white/10 flex flex-col justify-center">
                   <p className="text-[10px] font-black text-cyan-100 uppercase tracking-widest mb-2">Annualized Recovery Potential</p>
-                  <div className="text-5xl font-black text-white tracking-tighter">+${Math.round(results.recoveryAnnual).toLocaleString()}</div>
-                  <div className="mt-4 flex items-center justify-between">
+                  <div className="text-4xl sm:text-5xl font-black text-white tracking-tighter whitespace-nowrap">+${Math.round(results.recoveryAnnual).toLocaleString()}</div>
+                  <div className="mt-3 md:mt-4 flex items-center justify-between gap-2">
                     <span className="text-[10px] font-black uppercase text-cyan-100">Projected ROI</span>
-                    <span className="text-2xl font-black">{results.roi}x</span>
+                    <span className="text-xl md:text-2xl font-black">{results.roi}x</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Post-Calculator CTA */}
-            <div className="text-center pt-4">
-              <a href="#audit" className="inline-flex items-center gap-3 bg-[#0097B2] text-white px-10 py-5 rounded-2xl text-lg font-black uppercase tracking-widest hover:bg-cyan-700 transition shadow-2xl shadow-cyan-100 group">
+            <div className="text-center pt-2 md:pt-4">
+              <a href="#audit" className="inline-flex items-center justify-center gap-2 md:gap-3 bg-[#0097B2] text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl text-base md:text-lg font-black uppercase tracking-widest hover:bg-cyan-700 transition shadow-2xl shadow-cyan-100 group w-full sm:w-auto">
                 Book Your Free Revenue Audit <span className="group-hover:translate-x-1 transition inline-block">→</span>
               </a>
-              <p className="text-slate-400 text-xs font-medium mt-4">No sales pitch. We show you the breakdown and you decide if it makes sense.</p>
+              <p className="text-slate-400 text-xs font-medium mt-3 md:mt-4 px-4">No sales pitch. We show you the breakdown and you decide if it makes sense.</p>
             </div>
           </div>
         </div>
