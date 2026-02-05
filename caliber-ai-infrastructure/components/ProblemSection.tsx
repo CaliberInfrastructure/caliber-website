@@ -51,49 +51,49 @@ const PAIN_POINTS = [
 
 const ProblemSection: React.FC = () => {
   return (
-    <section id="problem" className="py-24 relative">
+    <section id="problem" className="py-16 md:py-24 relative">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <div className="inline-block px-5 py-2 mb-8 text-[10px] font-black tracking-[0.3em] text-red-600 uppercase bg-red-50 border border-red-100 rounded-full">
+        <div className="text-center mb-10 md:mb-16">
+          <div className="inline-block px-4 md:px-5 py-1.5 md:py-2 mb-6 md:mb-8 text-[10px] font-black tracking-[0.25em] md:tracking-[0.3em] text-red-600 uppercase bg-red-50 border border-red-100 rounded-full">
             The Hidden Revenue Crisis
           </div>
-          <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-4 md:mb-6 px-4">
             5 Ways Your Med Spa Is <span className="text-red-500 italic">Bleeding Revenue</span>
           </h2>
-          <p className="text-slate-500 font-medium max-w-2xl mx-auto text-lg">
+          <p className="text-slate-500 font-medium max-w-2xl mx-auto text-base sm:text-lg px-4">
             The average med spa loses <span className="text-slate-900 font-bold">$25,000–$35,000 every month</span> to operational inefficiencies that are completely fixable.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-10 md:mb-16">
           {PAIN_POINTS.map((point, i) => (
-            <div key={i} className="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-lg transition group">
-              <div className="flex items-center justify-between mb-8">
-                <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center group-hover:bg-red-100 transition">
+            <div key={i} className="bg-white p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-3xl lg:rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-lg transition group">
+              <div className="flex items-center justify-between mb-6 md:mb-8">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-red-50 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:bg-red-100 transition flex-shrink-0">
                   {point.icon}
                 </div>
                 <div className="text-right">
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">{point.sub}</p>
-                  <p className="text-2xl font-black text-red-500 tracking-tighter">{point.stat}</p>
+                  <p className="text-xl md:text-2xl font-black text-red-500 tracking-tighter whitespace-nowrap">{point.stat}</p>
                 </div>
               </div>
-              <h3 className="text-xl font-black text-slate-900 mb-4">{point.title}</h3>
+              <h3 className="text-lg md:text-xl font-black text-slate-900 mb-3 md:mb-4">{point.title}</h3>
               <p className="text-slate-500 text-sm leading-relaxed">{point.desc}</p>
             </div>
           ))}
 
           {/* Sound Familiar Card */}
-          <div className="bg-slate-950 p-10 rounded-[3rem] shadow-2xl flex flex-col justify-between relative overflow-hidden group">
+          <div className="bg-slate-950 p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-3xl lg:rounded-[3rem] shadow-2xl flex flex-col justify-between relative overflow-hidden group">
             <div className="relative z-10">
-              <div className="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-8 border border-cyan-500/20">
-                <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-6 md:mb-8 border border-cyan-500/20">
+                <svg className="w-5 h-5 md:w-6 md:h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
               </div>
-              <h3 className="text-3xl font-black text-white mb-4 tracking-tight">Sound Familiar?</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              <h3 className="text-2xl md:text-3xl font-black text-white mb-3 md:mb-4 tracking-tight">Sound Familiar?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6 md:mb-8">
                 These aren't just problems—they're <span className="text-cyan-400 font-bold">recoverable revenue</span>. Let us show you exactly how much you're losing.
               </p>
             </div>
-            <a href="#audit" className="relative z-10 w-full py-4 bg-cyan-600 text-white text-center rounded-2xl text-xs font-black uppercase tracking-widest hover:bg-cyan-500 transition group-hover:scale-[1.02]">
+            <a href="#audit" className="relative z-10 w-full py-4 bg-cyan-600 text-white text-center rounded-xl md:rounded-2xl text-xs font-black uppercase tracking-widest hover:bg-cyan-500 transition group-hover:scale-[1.02]">
               Get Your Free Audit →
             </a>
             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 blur-[60px] rounded-full"></div>
@@ -101,23 +101,23 @@ const ProblemSection: React.FC = () => {
         </div>
 
         {/* Summary Bar */}
-        <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-slate-100">
-           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center divide-x divide-slate-100">
+        <div className="bg-white rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] p-6 md:p-8 lg:p-12 shadow-sm border border-slate-100">
+           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-12 text-center">
+              <div className="pb-6 lg:pb-0 lg:pr-6 border-b lg:border-b-0 lg:border-r border-slate-100">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-2 whitespace-nowrap">$25-35k</p>
+                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-relaxed">Avg. Monthly Loss</p>
+              </div>
+              <div className="pb-6 lg:pb-0 lg:pr-6 border-b lg:border-b-0 lg:border-r border-slate-100">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-2 whitespace-nowrap">15-25</p>
+                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-relaxed">Missed Calls/Week</p>
+              </div>
+              <div className="lg:pr-6 lg:border-r border-slate-100">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-2 whitespace-nowrap">40%</p>
+                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-relaxed">After-Hours Inquiries</p>
+              </div>
               <div>
-                <p className="text-3xl md:text-4xl font-black text-slate-900 mb-2">$25-35k</p>
-                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Avg. Monthly Loss</p>
-              </div>
-              <div className="pl-4">
-                <p className="text-3xl md:text-4xl font-black text-slate-900 mb-2">15-25</p>
-                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Missed Calls/Week</p>
-              </div>
-              <div className="pl-4">
-                <p className="text-3xl md:text-4xl font-black text-slate-900 mb-2">40%</p>
-                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">After-Hours Inquiries</p>
-              </div>
-              <div className="pl-4">
-                <p className="text-3xl md:text-4xl font-black text-cyan-500 mb-2">10-17x</p>
-                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Recoverable ROI</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl font-black text-cyan-500 mb-2 whitespace-nowrap">10-17x</p>
+                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-relaxed">Recoverable ROI</p>
               </div>
            </div>
         </div>
