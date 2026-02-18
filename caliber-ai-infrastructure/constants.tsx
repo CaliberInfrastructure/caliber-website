@@ -13,7 +13,10 @@ export const TIERS: Record<ServiceTier, TierDetails> = {
       "Missed Call Text-Back (Instant SMS)",
       "Appointment Reminders (72/24/3/1hr)",
       "Basic Booking Automation",
-      "Full KPI Dashboard"
+      "Full KPI Dashboard",
+      "Unified Conversations Inbox (SMS, Email, FB, IG, Google)",
+      "Automated Review Requests (Google & Facebook)",
+      "Lead Pipeline (New Lead → Contacted → Booked → Client)"
     ]
   },
   [ServiceTier.ACCELERATION]: {
