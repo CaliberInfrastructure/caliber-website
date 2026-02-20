@@ -6,6 +6,7 @@ import ProblemSection from './components/ProblemSection';
 import FounderSection from './components/FounderSection';
 import AuditForm from './components/AuditForm';
 import HowItWorks from './components/HowItWorks';
+import BeforeAfter from './components/BeforeAfter';
 
 const App: React.FC = () => {
   const [showFloatingCTA, setShowFloatingCTA] = useState(false);
@@ -124,6 +125,7 @@ const App: React.FC = () => {
       {/* Components */}
       <ProblemSection />
       <Calculator />
+      <BeforeAfter />
       <HowItWorks />
       <Pricing />
       <FounderSection />

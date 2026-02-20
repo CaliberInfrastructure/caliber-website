@@ -12,6 +12,16 @@ export interface TierDetails {
   description: string;
   valueMonthly: number;
   features: string[];
+  tierLabel: string;
+  hookHeadline: string;
+  hookDescription: string;
+  outcomeCallout: {
+    money: string;
+    time: string;
+  };
+  icpLine: string;
+  supportLine?: string;
+  roiLabel: string;
 }
 
 export interface RevenueCalculation {
