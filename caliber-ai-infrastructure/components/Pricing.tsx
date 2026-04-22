@@ -69,7 +69,7 @@ const Pricing: React.FC = () => {
               </div>
 
               {/* Single CTA */}
-              <a href="#audit" className="inline-flex items-center justify-center gap-3 bg-[#0097B2] text-white px-10 py-6 rounded-2xl text-lg font-black hover:bg-cyan-500 transition shadow-2xl shadow-cyan-950/50 group">
+              <a href="#demo" className="inline-flex items-center justify-center gap-3 bg-[#0097B2] text-white px-10 py-6 rounded-2xl text-lg font-black hover:bg-cyan-500 transition shadow-2xl shadow-cyan-950/50 group">
                 Claim Your Spot — Only 2 Remaining in Q2 <span className="group-hover:translate-x-1 transition">→</span>
               </a>
             </div>

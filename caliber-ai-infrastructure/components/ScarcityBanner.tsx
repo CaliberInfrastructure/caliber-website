@@ -15,7 +15,7 @@ const ScarcityBanner: React.FC = () => {
           </span>
         </span>
         <a
-          href="#audit"
+          href="#demo"
           className="hidden sm:inline-flex items-center gap-1 bg-amber-500/20 border border-amber-500/30 text-amber-400 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest hover:bg-amber-500/30 transition"
         >
           Claim Your Spot <span>→</span>
