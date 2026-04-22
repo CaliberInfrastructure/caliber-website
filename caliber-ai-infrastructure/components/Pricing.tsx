@@ -5,162 +5,268 @@ import { ServiceTier } from '../types';
 
 const Pricing: React.FC = () => {
   const [showAllTiers, setShowAllTiers] = useState(false);
+  const [pricingOption, setPricingOption] = useState<'A' | 'B'>('A');
 
-  const fullAutomation = TIERS[ServiceTier.FULL_AUTOMATION];
-  const stabilization = TIERS[ServiceTier.STABILIZATION];
-  const acceleration = TIERS[ServiceTier.ACCELERATION];
+  const flagship = TIERS[ServiceTier.FULL_AUTONOMY];
+  const foundation = TIERS[ServiceTier.FOUNDATION];
+  const growth = TIERS[ServiceTier.GROWTH];
 
   return (
-    <section id="tiers" className="py-16 md:py-24 relative">
+    <section id="tiers" className="py-24 bg-slate-50 border-y border-slate-100">
       <div className="max-w-7xl mx-auto px-4">
-        {/* FULL AUTOMATION HERO CARD */}
-        <div className="bg-[#0F1E35] rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-20 relative overflow-hidden border border-[#2E3D52] shadow-2xl">
-          {/* Top accent gradient */}
-          <div className="absolute top-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg, #1B5EE8, #C0942C)' }}></div>
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+        {/* ═══════════════════════════════════════════════════
+            FLAGSHIP HERO CARD — Full Autonomy System™
+            ═══════════════════════════════════════════════════ */}
+        <div className="bg-[#0B1221] rounded-[4rem] p-10 md:p-20 relative overflow-hidden border border-slate-800 shadow-2xl">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-7">
-              <div className="inline-block px-4 py-1.5 mb-6 md:mb-8 text-[10px] font-semibold tracking-[0.25em] md:tracking-[0.3em] text-[#C0942C] uppercase bg-[#C0942C]/10 border border-[#C0942C]/20 rounded-full">
-                {fullAutomation.tierLabel}
+              {/* Badges */}
+              <div className="flex flex-wrap gap-3 mb-8">
+                <div className="inline-block px-4 py-1.5 text-[10px] font-black tracking-[0.3em] text-cyan-400 uppercase bg-cyan-500/10 border border-cyan-500/20 rounded-full">
+                  Flagship Tier
+                </div>
+                <div className="inline-block px-4 py-1.5 text-[10px] font-black tracking-[0.3em] text-amber-400 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full">
+                  Recommended
+                </div>
               </div>
-              <h3 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white tracking-tight mb-6 md:mb-8">{fullAutomation.name}</h3>
 
-              <p className="text-white font-bold text-xl sm:text-2xl md:text-3xl tracking-tight mb-4 md:mb-6 leading-tight">
-                {fullAutomation.hookHeadline}
+              <h3 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-4">
+                {flagship.name}
+              </h3>
+              <p className="text-2xl md:text-3xl font-black text-slate-400 tracking-tight mb-6 italic">
+                "The Last Hire You'll Ever Make"
               </p>
 
-              <p className="text-[#7A8799] text-base sm:text-lg md:text-xl mb-8 md:mb-12 leading-relaxed font-medium">
-                {fullAutomation.hookDescription}
+              {/* Lead paragraph */}
+              <p className="text-slate-400 text-lg mb-12 leading-relaxed font-medium">
+                Every week, your practice is quietly bleeding $6,250 in missed calls and no-shows. By the time you read this sentence, another $10 just walked out the door.
               </p>
 
-              <div className="space-y-4 md:space-y-5 mb-8 md:mb-10">
-                {fullAutomation.features.map((f, i) => (
-                  <div key={i} className="flex items-start gap-3 md:gap-4">
-                    <svg className="w-4 h-4 md:w-5 md:h-5 text-[#1B5EE8] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span className="text-[#B0BCCC] text-xs md:text-sm font-medium leading-relaxed">{f}</span>
+              {/* Feature grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-10 mb-12">
+                {flagship.features.map((f, i) => (
+                  <div key={i} className="flex items-center gap-4">
+                    <svg className="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-slate-300 text-sm font-bold tracking-tight">{f}</span>
                   </div>
                 ))}
               </div>
 
-              {/* Outcome Callout Box — Gold accent */}
-              <div className="bg-[#FBF5E0] border border-[#C0942C]/30 rounded-2xl p-5 md:p-6 mb-8 md:mb-10">
-                <p className="text-[#070D1A] text-sm md:text-base font-bold mb-2">
-                  {fullAutomation.outcomeCallout.money}
-                </p>
-                <p className="text-[#2E3D52] text-sm md:text-base font-bold">
-                  {fullAutomation.outcomeCallout.time}
-                </p>
+              {/* Guarantee badge */}
+              <div className="bg-amber-500/10 border border-amber-500/20 rounded-2xl p-5 flex items-center gap-4 mb-12">
+                <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-amber-400 font-black text-sm">Revenue Recovery Guarantee™ Included</p>
+                  <p className="text-amber-200/60 text-xs">10x ROI in 90 days or we work free until we deliver it</p>
+                </div>
               </div>
 
-              <p className="text-[#7A8799] text-xs md:text-sm font-medium leading-relaxed mb-8 md:mb-10 italic">
-                {fullAutomation.icpLine}
-              </p>
-
-              <a href="#audit" className="inline-flex items-center justify-center gap-2 md:gap-3 bg-[#1B5EE8] text-white px-8 md:px-10 py-5 md:py-6 rounded-xl text-base md:text-lg font-semibold hover:bg-[#2E72FF] transition-all duration-300 shadow-xl shadow-[#1B5EE8]/30 group w-full sm:w-auto" style={{ fontFamily: 'Space Grotesk' }}>
-                Get Your Free Audit <span className="group-hover:translate-x-1 transition">→</span>
+              {/* Single CTA */}
+              <a href="#audit" className="inline-flex items-center justify-center gap-3 bg-[#0097B2] text-white px-10 py-6 rounded-2xl text-lg font-black hover:bg-cyan-500 transition shadow-2xl shadow-cyan-950/50 group">
+                Claim Your Spot — Only 2 Remaining in Q2 <span className="group-hover:translate-x-1 transition">→</span>
               </a>
             </div>
 
-            {/* Investment Sidebar */}
+            {/* ─── Investment Sidebar ─── */}
             <div className="lg:col-span-5">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 lg:p-12 relative">
-                <p className="text-[10px] font-semibold text-[#C0942C] uppercase tracking-[0.25em] md:tracking-[0.3em] mb-3 md:mb-4">Value Delivered</p>
-                <div className="flex items-baseline gap-2 mb-6 md:mb-8">
-                  <span className="text-5xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight" style={{ fontFamily: 'JetBrains Mono' }}>~${(fullAutomation.valueMonthly / 1000).toFixed(1)}k</span>
-                  <span className="text-[#7A8799] font-medium text-base md:text-lg">/mo</span>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[3.5rem] p-10 lg:p-12 relative">
+
+                {/* Option Toggle */}
+                <div className="flex items-center justify-center gap-1 bg-white/10 rounded-full p-1 mb-10">
+                  <button
+                    onClick={() => setPricingOption('A')}
+                    className={`flex-1 py-3 px-4 rounded-full text-xs font-black uppercase tracking-widest transition ${
+                      pricingOption === 'A'
+                        ? 'bg-white text-slate-900'
+                        : 'text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    Option A — Standard
+                  </button>
+                  <button
+                    onClick={() => setPricingOption('B')}
+                    className={`flex-1 py-3 px-4 rounded-full text-xs font-black uppercase tracking-widest transition ${
+                      pricingOption === 'B'
+                        ? 'bg-white text-slate-900'
+                        : 'text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    Option B — Zero Barrier
+                  </button>
                 </div>
 
-                <div className="bg-white/5 border border-white/10 rounded-xl md:rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
-                  <div className="flex justify-between items-center gap-2">
-                    <span className="text-[#7A8799] font-medium text-xs md:text-sm">Your Investment</span>
-                    <span className="text-white font-bold text-xl md:text-2xl tracking-tight whitespace-nowrap" style={{ fontFamily: 'JetBrains Mono' }}>$2,000<span className="text-[#7A8799] font-medium text-xs md:text-sm">/mo</span></span>
+                {pricingOption === 'A' ? (
+                  <>
+                    <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] mb-4">
+                      AI Front Desk Installation
+                    </p>
+                    <div className="flex items-baseline gap-3 mb-2">
+                      <span className="text-6xl md:text-7xl font-black text-white tracking-tighter">$2,000</span>
+                      <span className="text-slate-500 font-bold text-lg">/mo</span>
+                    </div>
+                    <p className="text-slate-500 text-sm font-bold mb-4">
+                      + $10,000 Custom AI Infrastructure Build
+                    </p>
+                    <div className="flex items-center gap-2 mb-10">
+                      <div className="w-5 h-5 bg-amber-500/20 rounded flex items-center justify-center">
+                        <svg className="w-3 h-3 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      </div>
+                      <span className="text-amber-400 text-xs font-bold">30-day build guarantee — refund if not live</span>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] mb-4">
+                      Zero Barrier Entry
+                    </p>
+                    <div className="flex items-baseline gap-3 mb-2">
+                      <span className="text-6xl md:text-7xl font-black text-white tracking-tighter">$3,500</span>
+                      <span className="text-slate-500 font-bold text-lg">/mo</span>
+                    </div>
+                    <p className="text-slate-500 text-sm font-bold mb-4">
+                      $0 setup — 12-month minimum commitment
+                    </p>
+                    <div className="flex items-center gap-2 mb-10">
+                      <div className="w-5 h-5 bg-emerald-500/20 rounded flex items-center justify-center">
+                        <svg className="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-emerald-400 text-xs font-bold">No upfront investment required</span>
+                    </div>
+                  </>
+                )}
+
+                <div className="space-y-8 pt-10 border-t border-white/10">
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-400 font-medium">Commitment</span>
+                    <span className="text-white font-black text-right text-sm">
+                      {pricingOption === 'A' ? 'Monthly' : '12-month minimum'}
+                    </span>
                   </div>
-                  <p className="text-[#7A8799] text-[10px] md:text-xs font-medium mt-2">+ ${fullAutomation.setupFee.toLocaleString()} one-time build/setup</p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-400 font-medium">Value Delivered</span>
+                    <span className="text-cyan-400 font-black text-lg">~$26,300/mo</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-400 font-medium">Projected ROI</span>
+                    <span className="text-cyan-400 font-black text-4xl tracking-tighter">10–17x</span>
+                  </div>
                 </div>
 
-                <div className="bg-[#1B5EE8]/10 border border-[#1B5EE8]/20 rounded-xl md:rounded-2xl p-4 md:p-6 mb-6 md:mb-8">
-                  <div className="flex justify-between items-center gap-2">
-                    <span className="text-[#1B5EE8] font-bold text-xs md:text-sm uppercase tracking-wide">Net Recovery</span>
-                    <span className="text-[#1B5EE8] font-bold text-2xl md:text-3xl tracking-tight whitespace-nowrap" style={{ fontFamily: 'JetBrains Mono' }}>~${ ((fullAutomation.valueMonthly - fullAutomation.monthlyFee) / 1000).toFixed(0) }k+<span className="text-[#1B5EE8]/60 font-medium text-xs md:text-sm">/mo</span></span>
-                  </div>
-                </div>
-
-                <div className="space-y-4 md:space-y-6 pt-6 md:pt-8 border-t border-white/10">
-                  <div className="flex justify-between items-center gap-4">
-                    <span className="text-[#7A8799] font-medium text-xs md:text-sm">Support</span>
-                    <span className="text-white font-bold text-right text-xs md:text-sm">{fullAutomation.supportLine}</span>
-                  </div>
-                  <div className="flex justify-between items-center gap-4">
-                    <span className="text-[#7A8799] font-medium text-xs md:text-sm">Projected ROI</span>
-                    <span className="text-[#C0942C] font-bold text-3xl md:text-4xl tracking-tight" style={{ fontFamily: 'JetBrains Mono' }}>{fullAutomation.roiLabel}</span>
-                  </div>
+                {/* Framing copy */}
+                <div className="mt-10 pt-8 border-t border-white/10">
+                  <p className="text-slate-500 text-xs leading-relaxed italic text-center">
+                    {pricingOption === 'A'
+                      ? 'Option A pays for itself in 13 days of operation. Total 12-month cost: $34k.'
+                      : 'Option B removes the upfront decision entirely. Total 12-month cost: $42k vs $34k on Option A — your call.'}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#1B5EE8]/5 blur-[100px] rounded-full"></div>
-          <div className="absolute top-20 right-0 w-64 h-64 bg-[#C0942C]/5 blur-[80px] rounded-full"></div>
+          {/* Accent Blobs */}
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-cyan-500/5 blur-[100px] rounded-full"></div>
         </div>
 
-        {/* OTHER TIERS TOGGLE */}
+        {/* ═══════════════════════════════════════════════════
+            LOWER TIERS — Foundation & Growth
+            ═══════════════════════════════════════════════════ */}
         <div className="text-center mt-16 mb-8">
-          <p className="text-[#7A8799] font-medium mb-4 uppercase tracking-[0.2em] text-sm">Not ready for Full Automation? See other options</p>
-          <button onClick={() => setShowAllTiers(!showAllTiers)} className="inline-flex items-center gap-2 text-[#070D1A] font-bold text-lg transition group">
-            <svg className={`w-6 h-6 transition-transform ${showAllTiers ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+          <p className="text-slate-500 font-bold mb-4 uppercase tracking-[0.2em] text-sm">
+            Not sure which is right for you? Most South Florida med spas doing $100k+/mo choose Full Autonomy.
+          </p>
+          <button
+            onClick={() => setShowAllTiers(!showAllTiers)}
+            className="inline-flex items-center gap-2 text-slate-900 font-black text-lg transition group"
+          >
+            {showAllTiers ? 'Hide stepping-stone tiers' : 'See other tiers'}
+            <svg className={`w-6 h-6 transition-transform ${showAllTiers ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
         </div>
 
         {showAllTiers && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto mb-12">
-            {[acceleration, stabilization].map((tier, idx) => (
-              <div key={idx} className="bg-white rounded-2xl p-6 md:p-8 lg:p-10 shadow-sm border border-[#E2E8F4] flex flex-col hover:border-[#1B5EE8]/20 hover:shadow-lg transition-all duration-300">
-                <div>
-                  <p className="text-[10px] font-semibold text-[#1B5EE8] uppercase tracking-[0.25em] mb-3">{tier.tierLabel}</p>
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 sm:gap-2 mb-4 md:mb-6">
-                    <div><h4 className="text-2xl sm:text-3xl font-bold text-[#070D1A] tracking-tight">{tier.name}</h4></div>
-                    <div className="text-left sm:text-right">
-                      <p className="text-2xl sm:text-3xl font-bold text-[#070D1A] tracking-tight whitespace-nowrap" style={{ fontFamily: 'JetBrains Mono' }}>${tier.monthlyFee.toLocaleString()}<span className="text-[#B0BCCC] text-xs sm:text-sm font-medium">/mo</span></p>
-                      <p className="text-[10px] text-[#B0BCCC] font-semibold uppercase tracking-widest">${tier.setupFee.toLocaleString()} build/setup</p>
-                    </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-8">
+            {/* Foundation Card */}
+            <div className="bg-white rounded-[3rem] p-10 shadow-sm border border-slate-100 flex flex-col justify-between">
+              <div>
+                <div className="flex justify-between items-start mb-8">
+                  <div>
+                    <h4 className="text-3xl font-black text-slate-900 tracking-tighter">{foundation.name}</h4>
+                    <p className="text-slate-500 font-medium text-sm">{foundation.positioning}</p>
                   </div>
-                  <div className="mb-6 md:mb-8">
-                    <p className="text-2xl sm:text-3xl font-bold text-[#070D1A] tracking-tight" style={{ fontFamily: 'JetBrains Mono' }}>~${tier.valueMonthly.toLocaleString()}<span className="text-[#B0BCCC] text-xs sm:text-sm font-medium">/mo value delivered</span></p>
-                  </div>
-                  <p className="text-[#070D1A] font-bold text-base sm:text-lg tracking-tight mb-3 leading-snug">{tier.hookHeadline}</p>
-                  <p className="text-[#7A8799] text-xs sm:text-sm leading-relaxed mb-8 md:mb-10">{tier.hookDescription}</p>
-                  <ul className="space-y-4 mb-6">
-                    {tier.features.map((f, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <svg className="w-4 h-4 text-[#1B5EE8] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span className="text-[#2E3D52] text-xs sm:text-sm font-medium leading-relaxed">{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="bg-[#FBF5E0] border border-[#C0942C]/25 rounded-xl p-4 md:p-5 mb-6">
-                    <p className="text-[#070D1A] text-sm font-bold mb-1.5">{tier.outcomeCallout.money}</p>
-                    <p className="text-[#2E3D52] text-sm font-bold">{tier.outcomeCallout.time}</p>
-                  </div>
-                  <p className="text-[#7A8799] text-xs font-medium leading-relaxed mb-6 italic">{tier.icpLine}</p>
-                </div>
-                <div className="mt-auto pt-6 border-t border-[#E2E8F4]">
-                  <div className="flex justify-between items-center">
-                    <a href="#audit" className="text-[#1B5EE8] font-bold text-sm uppercase tracking-widest hover:text-[#2E72FF] transition group" style={{ fontFamily: 'Space Grotesk' }}>Get Your Free Audit <span className="group-hover:translate-x-1 transition inline-block">→</span></a>
-                    <span className="text-[#070D1A] font-bold text-sm" style={{ fontFamily: 'JetBrains Mono' }}>ROI: {tier.roiLabel}</span>
+                  <div className="text-right">
+                    <p className="text-3xl font-black text-slate-900 tracking-tighter">${foundation.monthlyFee.toLocaleString()}<span className="text-slate-400 text-sm font-bold">/mo</span></p>
+                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest">${foundation.setupFee.toLocaleString()} build</p>
                   </div>
                 </div>
+                <p className="text-slate-500 text-sm leading-relaxed mb-10">{foundation.description}</p>
+                <ul className="space-y-4 mb-10">
+                  {foundation.features.map((f, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <svg className="w-5 h-5 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                      <span className="text-slate-700 text-sm font-medium">{f}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
+              <div className="pt-8 border-t border-slate-50">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-slate-400 font-black text-[10px] uppercase tracking-widest">~${foundation.valueMonthly.toLocaleString()}/mo value</span>
+                </div>
+                <p className="text-slate-400 text-xs italic">Guarantee not available on this tier</p>
+              </div>
+            </div>
+
+            {/* Growth Card */}
+            <div className="bg-white rounded-[3rem] p-10 shadow-sm border border-slate-100 flex flex-col justify-between">
+              <div>
+                <div className="flex justify-between items-start mb-8">
+                  <div>
+                    <h4 className="text-3xl font-black text-slate-900 tracking-tighter">{growth.name}</h4>
+                    <p className="text-slate-500 font-medium text-sm">{growth.positioning}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-3xl font-black text-slate-900 tracking-tighter">${growth.monthlyFee.toLocaleString()}<span className="text-slate-400 text-sm font-bold">/mo</span></p>
+                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest">${growth.setupFee.toLocaleString()} build</p>
+                  </div>
+                </div>
+                <p className="text-slate-500 text-sm leading-relaxed mb-10">{growth.description}</p>
+                <ul className="space-y-4 mb-10">
+                  {growth.features.map((f, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <svg className="w-5 h-5 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                      <span className="text-slate-700 text-sm font-medium">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="pt-8 border-t border-slate-50">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-slate-400 font-black text-[10px] uppercase tracking-widest">~${growth.valueMonthly.toLocaleString()}/mo value</span>
+                </div>
+                <p className="text-slate-400 text-xs italic">Guarantee not available on this tier</p>
+              </div>
+            </div>
           </div>
         )}
 
-        <div className="mt-12 text-center">
-          <p className="text-[#B0BCCC] text-sm font-medium">
-            Not sure which tier fits? <a href="#audit" className="text-[#1B5EE8] font-bold underline">Get a free audit</a> and we'll recommend the right infrastructure for your practice.
-          </p>
-        </div>
         <div className="mt-8 text-center">
-          <p className="text-[#B0BCCC] text-xs font-medium">Recovery estimates are based on industry averages. Actual results vary by practice size and current operations.</p>
+          <p className="text-slate-400 text-sm font-medium">
+            Book a <a href="#demo" className="text-cyan-600 font-black underline">free demo</a> and we'll tell you honestly which tier fits your practice.
+          </p>
         </div>
       </div>
     </section>

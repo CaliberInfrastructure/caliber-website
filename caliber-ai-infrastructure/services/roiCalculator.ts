@@ -19,9 +19,9 @@ export const calculateROI = (params: RevenueCalculation): CalculationResults => 
   const recoveryMonthly = totalLossMonthly * 0.75;
   const recoveryAnnual = recoveryMonthly * 12;
 
-  // ROI calculation against $2,000 monthly fee (Full Automation tier)
-  const fullAutomationFee = 2000;
-  const roi = (recoveryMonthly - fullAutomationFee) / fullAutomationFee;
+  // ROI calculation against $2,000 monthly fee (Full Autonomy System™)
+  const autopilotFee = 2000;
+  const roi = (recoveryMonthly - autopilotFee) / autopilotFee;
 
   return {
     missedCallLossMonthly,

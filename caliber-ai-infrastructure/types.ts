@@ -1,8 +1,8 @@
 
 export enum ServiceTier {
-  STABILIZATION = 'STABILIZATION',
-  ACCELERATION = 'ACCELERATION',
-  FULL_AUTOMATION = 'FULL_AUTOMATION'
+  FOUNDATION = 'FOUNDATION',
+  GROWTH = 'GROWTH',
+  FULL_AUTONOMY = 'FULL_AUTONOMY'
 }
 
 export interface TierDetails {
@@ -10,18 +10,9 @@ export interface TierDetails {
   monthlyFee: number;
   setupFee: number;
   description: string;
+  positioning: string;
   valueMonthly: number;
   features: string[];
-  tierLabel: string;
-  hookHeadline: string;
-  hookDescription: string;
-  outcomeCallout: {
-    money: string;
-    time: string;
-  };
-  icpLine: string;
-  supportLine?: string;
-  roiLabel: string;
 }
 
 export interface RevenueCalculation {
