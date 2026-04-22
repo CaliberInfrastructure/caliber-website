@@ -9,7 +9,7 @@ import GuaranteeSection from './components/GuaranteeSection';
 import Pricing from './components/Pricing';
 import SocialProof from './components/SocialProof';
 import FounderSection from './components/FounderSection';
-import AuditForm from './components/AuditForm';
+import DemoBooking from './components/DemoBooking';
 
 const App: React.FC = () => {
   return (
@@ -90,8 +90,8 @@ const App: React.FC = () => {
       {/* Founder / Methodology */}
       <FounderSection />
 
-      {/* Audit Form */}
-      <AuditForm />
+      {/* Demo Booking */}
+      <DemoBooking />
 
       {/* Footer */}
       <footer className="bg-slate-950 py-20 border-t border-slate-800">
