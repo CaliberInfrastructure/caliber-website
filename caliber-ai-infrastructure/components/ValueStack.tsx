@@ -71,54 +71,45 @@ const ValueStack: React.FC = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-slate-50 border-y border-slate-100">
-      <div className="max-w-5xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <p className="text-[10px] font-black tracking-[0.4em] text-amber-600 uppercase mb-4">
-            The Full Autonomy System™ — What's Included
-          </p>
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter mb-6">
-            $16,100/mo in Value. <span className="text-[#0097B2]">$2,000/mo Investment.</span>
+    <section id="value-stack" className="bg-surface-2">
+      <div className="max-w-narrow mx-auto px-10 py-20">
+        <div className="text-center mb-12">
+          <div className="text-xs tracking-[0.08em] uppercase text-teal-deep font-semibold mb-3.5">
+            The Full Autonomy System™ — what's included
+          </div>
+          <h2 className="font-serif font-normal text-4xl md:text-[42px] tracking-[-0.01em] text-navy leading-[1.14] mb-3.5">
+            $16,100/mo in value. <span className="text-teal">$2,000/mo investment.</span>
           </h2>
-          <p className="text-slate-500 text-lg font-medium max-w-2xl mx-auto">
+          <p className="text-[15px] leading-[1.6] text-ink-3 max-w-[560px] mx-auto">
             Every component has a standalone value and a specific revenue leak it eliminates.
           </p>
         </div>
 
-        {/* Core Stack */}
-        <div className="space-y-3 mb-8">
+        {/* Core stack */}
+        <div className="flex flex-col gap-2.5 mb-3.5">
           {CORE_STACK.map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden cursor-pointer hover:shadow-md transition"
+              className="bg-white rounded-md shadow-row overflow-hidden cursor-pointer"
               onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
             >
-              <div className="flex items-center justify-between p-6">
+              <div className="flex items-center justify-between px-6 py-[22px]">
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-slate-900 font-black text-lg tracking-tight">{item.name}</span>
+                  <span className="w-[38px] h-[38px] bg-navy rounded-[11px] flex items-center justify-center text-teal-light text-base flex-shrink-0">✓</span>
+                  <span className="text-base font-bold text-navy tracking-[-0.01em]">{item.name}</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="text-[#0097B2] font-black text-lg hidden sm:inline">{item.value}</span>
-                  <svg
-                    className={`w-5 h-5 text-slate-400 transition-transform ${expandedIndex === i ? 'rotate-180' : ''}`}
-                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <span className="text-[15px] font-bold text-teal hidden sm:inline">{item.value}</span>
+                  <span className={`text-muted-3 text-[13px] transition-transform ${expandedIndex === i ? 'rotate-180' : ''}`}>▾</span>
                 </div>
               </div>
               {expandedIndex === i && (
-                <div className="px-6 pb-6 pt-0">
-                  <div className="bg-slate-50 rounded-xl p-4 flex items-center gap-3">
-                    <span className="text-xs font-black text-slate-400 uppercase tracking-widest">What it recovers:</span>
-                    <span className="text-slate-700 font-bold text-sm">{item.recovers}</span>
+                <div className="px-6 pb-[22px] pl-6 sm:pl-[78px]">
+                  <div className="bg-surface-2 rounded-sm p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+                    <span className="text-[10px] tracking-[0.1em] uppercase text-muted-2 font-bold flex-shrink-0">What it recovers</span>
+                    <span className="text-[13.5px] font-semibold text-ink-2">{item.recovers}</span>
                   </div>
-                  <p className="sm:hidden text-[#0097B2] font-black text-sm mt-3">Est. value: {item.value}</p>
+                  <p className="sm:hidden text-teal font-bold text-sm mt-3">Est. value: {item.value}</p>
                 </div>
               )}
             </div>
@@ -126,67 +117,53 @@ const ValueStack: React.FC = () => {
         </div>
 
         {/* Bonuses */}
-        <div className="space-y-3 mb-12">
-          {BONUSES.map((item, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-2xl border border-amber-200/50 shadow-sm overflow-hidden cursor-pointer hover:shadow-md transition"
-              onClick={() => setExpandedIndex(expandedIndex === CORE_STACK.length + i ? null : CORE_STACK.length + i)}
-            >
-              <div className="flex items-center justify-between p-6">
-                <div className="flex items-center gap-4">
-                  <div className="bg-amber-500 text-white text-[10px] font-black px-3 py-1.5 rounded-lg uppercase tracking-widest flex-shrink-0">
-                    Bonus {item.num}
+        <div className="flex flex-col gap-2.5 mb-10">
+          {BONUSES.map((item, i) => {
+            const idx = CORE_STACK.length + i;
+            return (
+              <div
+                key={i}
+                className="bg-white rounded-md shadow-row border border-teal-wash overflow-hidden cursor-pointer"
+                onClick={() => setExpandedIndex(expandedIndex === idx ? null : idx)}
+              >
+                <div className="flex items-center justify-between px-6 py-[22px]">
+                  <div className="flex items-center gap-4">
+                    <span className="bg-teal text-white text-[10px] font-bold tracking-[0.08em] uppercase px-[11px] py-1.5 rounded-[8px] flex-shrink-0">Bonus {item.num}</span>
+                    <span className="text-base font-bold text-navy tracking-[-0.01em]">{item.name}</span>
                   </div>
-                  <span className="text-slate-900 font-black text-lg tracking-tight">{item.name}</span>
+                  <div className="flex items-center gap-4">
+                    <span className="text-[15px] font-bold text-teal-deep hidden sm:inline">{item.value}</span>
+                    <span className={`text-muted-3 text-[13px] transition-transform ${expandedIndex === idx ? 'rotate-180' : ''}`}>▾</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <span className="text-amber-600 font-black text-lg hidden sm:inline">{item.value}</span>
-                  <svg
-                    className={`w-5 h-5 text-slate-400 transition-transform ${expandedIndex === CORE_STACK.length + i ? 'rotate-180' : ''}`}
-                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
+                {expandedIndex === idx && (
+                  <div className="px-6 pb-[22px] pl-6 sm:pl-[78px]">
+                    <div className="bg-teal-wash rounded-sm p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+                      <span className="text-[10px] tracking-[0.1em] uppercase text-teal-deep font-bold flex-shrink-0">What it delivers</span>
+                      <span className="text-[13.5px] font-semibold text-ink-2">{item.recovers}</span>
+                    </div>
+                    <p className="sm:hidden text-teal-deep font-bold text-sm mt-3">Value: {item.value}</p>
+                  </div>
+                )}
               </div>
-              {expandedIndex === CORE_STACK.length + i && (
-                <div className="px-6 pb-6 pt-0">
-                  <div className="bg-amber-50 rounded-xl p-4 flex items-center gap-3">
-                    <span className="text-xs font-black text-amber-500 uppercase tracking-widest">What it delivers:</span>
-                    <span className="text-slate-700 font-bold text-sm">{item.recovers}</span>
-                  </div>
-                  <p className="sm:hidden text-amber-600 font-black text-sm mt-3">Value: {item.value}</p>
-                </div>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Totals callout */}
-        <div className="bg-emerald-50 border-2 border-emerald-200 rounded-[2rem] p-8 md:p-12 text-center">
-          <div className="mb-6">
-            <p className="text-slate-400 font-bold text-lg line-through mb-1">
-              Total Stack Value: $16,100/mo + $5,500 one-time
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        {/* Closing summary card */}
+        <div className="bg-white border border-hairline-teal rounded-xl p-11 text-center">
+          <p className="text-[15px] text-muted-2 line-through mb-7">Total Stack Value: $16,100/mo + $5,500 one-time</p>
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 items-center">
             <div>
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Your Investment</p>
-              <p className="text-3xl font-black text-slate-900 tracking-tighter">$2,000/mo</p>
-              <p className="text-slate-500 text-sm font-bold">+ $10,000 build</p>
+              <div className="text-[11px] tracking-[0.08em] uppercase text-muted-2 font-semibold mb-2">Your Investment</div>
+              <div className="font-serif font-medium text-[34px] tracking-[-0.02em] text-navy">$2,000/mo</div>
+              <div className="text-[13px] text-muted font-medium mt-1">+ $10,000 build</div>
             </div>
-            <div className="hidden md:flex justify-center">
-              <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </div>
-            </div>
+            <div className="hidden md:flex w-[52px] h-[52px] bg-teal rounded-full items-center justify-center text-white text-[22px] mx-auto">→</div>
             <div>
-              <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-2">Recovered Revenue</p>
-              <p className="text-3xl font-black text-emerald-600 tracking-tighter">~$24,000+/mo</p>
-              <p className="text-emerald-600 text-sm font-black">ROI: 10–17x</p>
+              <div className="text-[11px] tracking-[0.08em] uppercase text-teal-deep font-semibold mb-2">Recovered Revenue</div>
+              <div className="font-serif font-medium text-[34px] tracking-[-0.02em] text-teal">~$24,000+/mo</div>
+              <div className="text-[13px] text-teal-deep font-bold mt-1">ROI: 10–17x</div>
             </div>
           </div>
         </div>

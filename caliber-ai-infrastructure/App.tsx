@@ -1,7 +1,6 @@
 
 import React from 'react';
 import ScarcityBanner from './components/ScarcityBanner';
-import RevenueLossCounter from './components/RevenueLossCounter';
 import ProblemSection from './components/ProblemSection';
 import Calculator from './components/Calculator';
 import ValueStack from './components/ValueStack';
@@ -11,107 +10,150 @@ import SocialProof from './components/SocialProof';
 import FounderSection from './components/FounderSection';
 import DemoBooking from './components/DemoBooking';
 
+const NAV_LINKS = [
+  { href: '#problem', label: 'Diagnosis' },
+  { href: '#calculator', label: 'Revenue Audit' },
+  { href: '#value-stack', label: "What's Included" },
+  { href: '#tiers', label: 'Pricing' },
+  { href: '#about', label: 'Methodology' },
+];
+
+const HERO_RECOVERY = [
+  { label: 'Missed-call recovery', value: '+$8,400' },
+  { label: 'No-show elimination', value: '+$6,100' },
+  { label: 'Dormant reactivation', value: '+$10,300' },
+];
+
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen">
-      {/* Scarcity Banner — Task 1.3 */}
+    <div className="min-h-screen bg-white">
+      {/* Capacity bar — calm navy strip */}
       <ScarcityBanner />
 
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-20 items-center">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-slate-900 rounded flex items-center justify-center">
-              <span className="text-white font-bold uppercase">C</span>
-            </div>
-            <span className="text-2xl font-black tracking-tighter text-slate-900 uppercase">Caliber</span>
+      <nav className="sticky top-0 z-50 bg-white border-b border-hairline">
+        <div className="max-w-container mx-auto px-10 py-[18px] flex items-center justify-between">
+          <div className="flex items-center gap-[11px]">
+            <div className="w-[30px] h-[30px] bg-navy rounded-[9px] flex items-center justify-center text-white font-serif font-medium text-[17px]">C</div>
+            <span className="text-[19px] font-bold tracking-[-0.015em] text-ink">Caliber</span>
+            <span className="hidden sm:inline-block text-[10px] tracking-[0.14em] uppercase text-muted-2 font-semibold border-l border-hairline pl-[11px]">Infrastructure</span>
           </div>
-          <div className="hidden md:flex space-x-8 text-[10px] font-black uppercase tracking-[0.25em] text-slate-500">
-            <a href="#problem" className="hover:text-cyan-600 transition">Diagnosis</a>
-            <a href="#calculator" className="hover:text-cyan-600 transition">Revenue Audit</a>
-            <a href="#value-stack" className="hover:text-cyan-600 transition">What's Included</a>
-            <a href="#tiers" className="hover:text-cyan-600 transition">Pricing</a>
-            <a href="#about" className="hover:text-cyan-600 transition">Methodology</a>
+          <div className="hidden md:flex gap-7 text-[13.5px] font-medium text-ink-3">
+            {NAV_LINKS.map((l) => (
+              <a key={l.href} href={l.href} className="hover:text-teal transition">{l.label}</a>
+            ))}
           </div>
-          <a href="#demo" className="bg-slate-900 text-white px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-slate-800 transition shadow-xl shadow-slate-100">Free Demo</a>
+          <a href="#demo" className="bg-teal text-white text-[13px] font-semibold px-[22px] py-[11px] rounded-xl hover:bg-teal-deep transition">Free Demo</a>
         </div>
       </nav>
 
-      {/* Hero Section — Task 3.2 Rewrite */}
-      <section className="relative pt-32 pb-40 overflow-hidden bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-block px-4 py-1.5 mb-10 text-[10px] font-black tracking-[0.4em] text-cyan-700 uppercase bg-cyan-50 border border-cyan-100 rounded-full">
-            South Florida's Med Spa Infrastructure Partner
+      {/* Hero */}
+      <section className="bg-hero-fade">
+        <div className="max-w-container mx-auto px-10 pt-[72px] pb-[76px] flex flex-col lg:flex-row gap-12 lg:gap-[52px] items-center">
+          <div className="flex-[1.32] w-full">
+            <div className="inline-flex items-center gap-2 bg-teal-wash text-teal-deep text-xs font-semibold px-[15px] py-[7px] rounded-xl mb-[26px]">
+              <span className="w-1.5 h-1.5 bg-teal rounded-full"></span>
+              South Florida med spa infrastructure partner
+            </div>
+            <h1 className="font-serif font-normal text-[40px] sm:text-[52px] lg:text-[60px] leading-[1.07] tracking-[-0.015em] text-navy mb-6">
+              Your med spa is quietly losing <span className="text-teal italic">$10–30k/mo</span>
+            </h1>
+            <p className="text-[18px] leading-[1.62] text-ink-2 max-w-[540px] mb-8">
+              We install a complete AI front desk that answers every call, books every qualified lead, and reactivates your dormant database 24/7 — recovering <strong className="text-navy font-bold">$20k–$30k/mo</strong>. <span className="text-teal-deep font-bold">Guaranteed.</span>
+            </p>
+            <div className="flex flex-col sm:flex-row gap-[13px] mb-6">
+              <a href="#demo" className="bg-teal text-white text-[14.5px] font-semibold px-7 py-[15px] rounded-sm shadow-cta hover:bg-teal-deep transition text-center">Book a Free Demo →</a>
+              <a href="#calculator" className="bg-white text-navy text-[14.5px] font-semibold px-7 py-[15px] rounded-sm shadow-soft hover:bg-surface-2 transition text-center">See How Much You're Losing</a>
+            </div>
+            <div className="text-[13px] text-muted font-medium">Q2 onboarding capacity — 2 of 6 implementation slots open · 60-second booking</div>
           </div>
-          <h1 className="text-6xl md:text-[8rem] font-black text-slate-900 leading-[0.95] mb-12 tracking-tighter">
-            Your Med Spa Is <br />Quietly Losing <br /><span className="text-[#0097B2]">$10–30k/mo</span>
-          </h1>
-          <p className="max-w-4xl mx-auto text-xl md:text-2xl text-slate-500 mb-16 leading-relaxed font-medium">
-            We install a complete AI front desk that answers every call, books every qualified lead, and reactivates your dormant database 24/7 — recovering <span className="text-slate-900 font-black">$20k–$30k/mo</span>. <span className="text-amber-600 font-black">Guaranteed.</span>
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <a href="#demo" className="bg-[#0097B2] text-white px-12 py-6 rounded-2xl text-lg font-black uppercase tracking-widest hover:bg-cyan-700 transition shadow-2xl shadow-cyan-100 group">
-              Book a Free Demo <span className="group-hover:translate-x-1 transition inline-block">→</span>
-            </a>
-            <a href="#calculator" className="bg-white text-slate-900 border-2 border-slate-100 px-12 py-6 rounded-2xl text-lg font-black uppercase tracking-widest hover:bg-slate-50 transition">
-              See How Much You're Losing
-            </a>
+
+          {/* Elevated ROI card */}
+          <div className="w-full lg:flex-1 lg:max-w-[392px]">
+            <div className="bg-white rounded-xl p-[30px] shadow-elevated">
+              <div className="text-xs font-semibold tracking-[0.05em] uppercase text-muted mb-1.5">Recovered / month</div>
+              <div className="font-serif font-medium text-[50px] leading-none tracking-[-0.02em] text-navy mb-1.5">$24,800</div>
+              <div className="text-xs text-muted-2 mb-6">Illustrative — modeled for a $137k/mo practice</div>
+              <div className="flex flex-col gap-[15px]">
+                {HERO_RECOVERY.map((r, i) => (
+                  <React.Fragment key={r.label}>
+                    {i > 0 && <div className="h-px bg-hairline"></div>}
+                    <div className="flex justify-between items-center">
+                      <span className="text-[13.5px] text-ink-2">{r.label}</span>
+                      <span className="text-sm font-bold text-teal">{r.value}</span>
+                    </div>
+                  </React.Fragment>
+                ))}
+              </div>
+              <div className="mt-6 bg-surface-3 rounded-md px-[18px] py-[15px] flex justify-between items-center">
+                <span className="text-xs font-semibold tracking-[0.04em] uppercase text-muted">Projected ROI</span>
+                <span className="font-serif font-medium text-2xl text-navy">12x</span>
+              </div>
+            </div>
           </div>
-          {/* Scarcity micro-copy */}
-          <p className="mt-8 text-slate-400 text-sm font-bold">
-            Takes 60 seconds. Pick a time that works for you. Only <span className="text-amber-600">2 Q2 spots</span> remaining.
-          </p>
         </div>
       </section>
 
-      {/* Revenue Loss Counter — Task 2.2 */}
-      <RevenueLossCounter />
+      {/* Anchor band */}
+      <section className="bg-navy">
+        <div className="max-w-container mx-auto px-10 py-[46px] flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-0">
+          <div className="lg:flex-none lg:max-w-[308px] lg:pr-11 lg:border-r border-navy-line">
+            <div className="font-serif font-normal text-2xl leading-[1.3] text-white mb-3">The front desk, rebuilt as infrastructure.</div>
+            <div className="text-[12.5px] text-onnavy-2 leading-[1.5]">Industry baseline: the average South Florida med spa leaks ~$850/day through missed calls and no-shows.</div>
+          </div>
+          {[
+            { label: 'Recovered / month', figure: '$20–30k', caption: 'Modeled across the Full Autonomy System' },
+            { label: 'Inbound coverage', figure: '100% · 24/7', caption: 'Every call answered, after-hours included' },
+            { label: 'Response time', figure: 'Instant', caption: 'SMS text-back the moment a call is missed' },
+          ].map((s, i) => (
+            <div key={s.label} className={`flex-1 lg:px-10 ${i > 0 ? 'lg:border-l border-navy-line pt-8 lg:pt-0 border-t lg:border-t-0' : ''} ${i === 0 ? 'border-t border-navy-line pt-8 lg:pt-0 lg:border-t-0' : ''}`}>
+              <div className="text-[11px] tracking-[0.14em] uppercase text-teal-light font-semibold mb-2.5">{s.label}</div>
+              <div className="font-serif font-medium text-[34px] tracking-[-0.01em] text-white">{s.figure}</div>
+              <div className="text-[12.5px] text-onnavy mt-1.5">{s.caption}</div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      {/* Problem Section */}
+      {/* Problem / Diagnosis */}
       <ProblemSection />
 
-      {/* Calculator */}
+      {/* Calculator / Revenue Audit */}
       <Calculator />
 
-      {/* Value Stack — Task 2.1 + Task 3.1 (bonuses integrated) */}
-      <div id="value-stack">
-        <ValueStack />
-      </div>
+      {/* Value Stack / What's Included */}
+      <ValueStack />
 
-      {/* Guarantee Section — Task 1.1 */}
+      {/* Guarantee */}
       <GuaranteeSection />
 
-      {/* Pricing — Task 1.2 + Task 2.3 + Task 2.4 */}
+      {/* Pricing */}
       <Pricing />
 
-      {/* Social Proof — Task 4.1 */}
+      {/* Social Proof */}
       <SocialProof />
 
-      {/* Founder / Methodology */}
+      {/* About / Methodology */}
       <FounderSection />
 
-      {/* Demo Booking */}
+      {/* Demo */}
       <DemoBooking />
 
       {/* Footer */}
-      <footer className="bg-slate-950 py-20 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-12">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-                <span className="text-slate-900 font-black text-sm uppercase">C</span>
-              </div>
-              <span className="text-2xl font-black tracking-tighter text-white uppercase">Caliber</span>
-            </div>
-            <div className="flex gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">
-              <a href="#problem" className="hover:text-white transition">Diagnosis</a>
-              <a href="#tiers" className="hover:text-white transition">Pricing</a>
-              <a href="#about" className="hover:text-white transition">About</a>
-            </div>
-            <div className="text-right">
-              <p className="text-slate-400 font-black text-[10px] uppercase tracking-widest mb-1">South Florida Based</p>
-              <p className="text-slate-600 text-[10px] uppercase tracking-widest font-bold">&copy; 2026 Caliber Infrastructure</p>
-            </div>
+      <footer className="bg-navy border-t border-navy-line">
+        <div className="max-w-container mx-auto px-10 py-14 flex flex-wrap items-center justify-between gap-10">
+          <div className="flex items-center gap-[11px]">
+            <div className="w-[30px] h-[30px] bg-white rounded-[9px] flex items-center justify-center text-navy font-serif font-medium text-[17px]">C</div>
+            <span className="text-[19px] font-bold tracking-[-0.015em] text-white">Caliber</span>
+          </div>
+          <div className="flex gap-[30px] text-[13px] text-onnavy">
+            <a href="#problem" className="hover:text-white transition">Diagnosis</a>
+            <a href="#tiers" className="hover:text-white transition">Pricing</a>
+            <a href="#about" className="hover:text-white transition">About</a>
+          </div>
+          <div className="text-right">
+            <div className="text-xs font-semibold text-onnavy-3 mb-[3px]">South Florida based &amp; focused</div>
+            <div className="text-xs text-muted-4">&copy; 2026 Caliber Infrastructure</div>
           </div>
         </div>
       </footer>

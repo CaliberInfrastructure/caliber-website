@@ -1,24 +1,21 @@
 
 import React from 'react';
 
+// Calm capacity line (replaces the old loud scarcity banner). One navy strip,
+// a single sentence, and a quiet teal link. No animation, no countdown.
 const ScarcityBanner: React.FC = () => {
   return (
-    <div className="bg-[#1a1a2e] text-white py-3 px-4 relative z-[60]">
-      <div className="max-w-7xl mx-auto flex items-center justify-center gap-4 text-sm">
-        <span className="flex items-center gap-2">
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
-          </span>
-          <span className="font-medium tracking-wide">
-            Q2 2026 — Only <span className="text-amber-400 font-black">2 spots</span> remaining in South Florida.
-          </span>
+    <div className="bg-navy">
+      <div className="max-w-container mx-auto px-10 py-[11px] flex flex-wrap items-center justify-center gap-x-3.5 gap-y-1 text-center">
+        <span className="inline-flex items-center gap-[9px] text-[13px] text-onnavy-3">
+          <span className="w-[7px] h-[7px] bg-teal-light rounded-full"></span>
+          Q2 2026 — 2 of 6 implementation slots open in South Florida.
         </span>
         <a
           href="#demo"
-          className="hidden sm:inline-flex items-center gap-1 bg-amber-500/20 border border-amber-500/30 text-amber-400 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest hover:bg-amber-500/30 transition"
+          className="text-xs font-semibold tracking-[0.02em] text-teal-light hover:opacity-80 transition"
         >
-          Claim Your Spot <span>→</span>
+          Claim a slot →
         </a>
       </div>
     </div>
