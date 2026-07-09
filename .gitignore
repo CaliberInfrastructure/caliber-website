@@ -1,3 +1,17 @@
+# ─────────────────────────────────────────────────────────────
+# Repo scope
+# This git repo (CaliberInfrastructure/caliber-website) lives inside the
+# "Caliber Agency Files" business folder, but only the website app in
+# caliber-ai-infrastructure/ belongs here. Ignore everything else at the
+# repo root — business docs, other project folders, scratch/lock files —
+# so non-website files never get committed into the website repo again.
+# ─────────────────────────────────────────────────────────────
+/*
+!/.gitignore
+!/caliber-ai-infrastructure/
+
+# ── Standard ignores (apply within caliber-ai-infrastructure/) ──
+
 # Dependencies
 node_modules
 
