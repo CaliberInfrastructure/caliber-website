@@ -61,7 +61,7 @@ const Pricing: React.FC = () => {
               </div>
 
               <a href="#demo" className="inline-flex items-center gap-2.5 bg-teal text-white text-[15px] font-semibold px-7 py-4 rounded-sm hover:bg-teal-deep transition">
-                Claim your spot — 2 remaining in Q2 <span>→</span>
+                Book a free demo <span>→</span>
               </a>
             </div>
 

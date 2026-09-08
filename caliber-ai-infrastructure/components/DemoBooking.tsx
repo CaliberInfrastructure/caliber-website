@@ -58,7 +58,7 @@ const DemoBooking: React.FC = () => {
           <div className="bg-white rounded-2xl p-10 md:p-11 lg:sticky lg:top-24">
             <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.1em] uppercase text-teal-deep font-semibold bg-teal-wash px-3.5 py-[7px] rounded-full mb-7">
               <span className="w-1.5 h-1.5 bg-teal rounded-full"></span>
-              2 Q2 spots remaining
+              Now booking founding clients
             </div>
 
             <h3 className="font-serif font-medium text-[32px] text-navy tracking-[-0.01em] mb-2">Book Your Demo</h3>

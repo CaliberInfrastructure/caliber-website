@@ -1,0 +1,98 @@
+/* Long-form document styling for the static Terms, Privacy, and Guide pages.
+   These pages ship their content as real HTML (no React) so crawlers and AI
+   retrieval engines read them without executing JavaScript. Tailwind's Play CDN
+   has no typography plugin, so body copy is styled here instead.
+   Colours mirror the design tokens in tailwind-tokens.js. */
+
+.doc {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: #46535B;
+}
+
+.doc > * + * { margin-top: 1.15em; }
+
+.doc h2 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  color: #0C1A24;
+  margin-top: 2.4em;
+  margin-bottom: 0.65em;
+  scroll-margin-top: 90px;
+}
+
+.doc h3 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #0C1A24;
+  margin-top: 1.9em;
+  margin-bottom: 0.5em;
+  scroll-margin-top: 90px;
+}
+
+.doc h2 + p, .doc h3 + p { margin-top: 0; }
+
+.doc strong { color: #0C1A24; font-weight: 700; }
+
+.doc a {
+  color: #0E7E8F;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.doc a:hover { color: #0B5E6B; }
+
+.doc ul, .doc ol { padding-left: 1.35em; }
+.doc ul { list-style: disc; }
+.doc ol { list-style: decimal; }
+.doc li + li { margin-top: 0.5em; }
+.doc li::marker { color: #9AA4AA; }
+
+.doc blockquote {
+  border-left: 3px solid #CFE6E9;
+  padding: 0.1em 0 0.1em 1.15em;
+  color: #5A666E;
+  font-style: italic;
+}
+
+/* Comparison table — scrolls on its own rather than the page */
+.doc .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+.doc table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.doc th, .doc td {
+  text-align: left;
+  padding: 13px 16px;
+  border-bottom: 1px solid #EEF0F1;
+  vertical-align: top;
+}
+.doc th {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #0C1A24;
+  background: #F7F9FA;
+  border-bottom: 1px solid #E3E7E8;
+  white-space: nowrap;
+}
+.doc tbody tr:last-child td { border-bottom: none; }
+
+.doc hr { border: 0; border-top: 1px solid #EEF0F1; margin: 2.6em 0; }
+
+/* Numbered clause paragraphs in the legal documents */
+.doc .clause { margin-top: 0.85em; }
+
+@media (max-width: 640px) {
+  .doc { font-size: 16px; }
+  .doc h2 { font-size: 26px; }
+}
