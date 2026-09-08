@@ -1,3 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────
+   Global base — previously inline <style> in index.html
+   ───────────────────────────────────────────────────────────── */
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Hanken Grotesk', system-ui, sans-serif; }
+
+/* Teal range sliders for the revenue calculator */
+input[type=range] {
+  -webkit-appearance: none; appearance: none;
+  height: 4px; border-radius: 4px; background: #D6E3E5; outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: #0E7E8F; cursor: pointer; border: 3px solid #fff;
+  box-shadow: 0 1px 4px rgba(12,26,36,.25);
+}
+input[type=range]::-moz-range-thumb {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: #0E7E8F; cursor: pointer; border: 3px solid #fff;
+}
+
 /* Long-form document styling for the static Terms, Privacy, and Guide pages.
    These pages ship their content as real HTML (no React) so crawlers and AI
    retrieval engines read them without executing JavaScript. Tailwind's Play CDN

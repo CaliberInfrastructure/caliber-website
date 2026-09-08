@@ -1,12 +1,21 @@
-// Design tokens for the Caliber visual upgrade. Consumed by the Tailwind
-// Play CDN (configured at runtime). Components reference these tokens
-// (teal / navy / terracotta / ink / surface, the 12–28px radius scale,
-// and the serif/sans families) rather than ad-hoc hex.
+/** @type {import('tailwindcss').Config} */
+// Design tokens for the Caliber visual system. This is the same object that
+// used to be assigned to `tailwind.config` at runtime by the Tailwind Play CDN
+// (public/tailwind-tokens.js); it now feeds the build-time compiler instead.
 //
-// Loaded as a plain (non-deferred) script immediately after the Play CDN on
-// every page — the React app and the static Terms / Privacy / Guide pages —
-// so the palette stays identical across the site from one source.
-tailwind.config = {
+// `content` must cover every file that contains class names. That includes the
+// three hand-written static pages (terms/privacy/guide) — they have no JS entry,
+// so if they are missing here their classes get purged and they render unstyled.
+export default {
+  content: [
+    './index.html',
+    './terms.html',
+    './privacy.html',
+    './guide/**/*.html',
+    './index.tsx',
+    './App.tsx',
+    './components/**/*.tsx',
+  ],
   theme: {
     extend: {
       colors: {
@@ -42,4 +51,5 @@ tailwind.config = {
       },
     },
   },
+  plugins: [],
 };
