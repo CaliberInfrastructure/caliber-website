@@ -1,10 +1,12 @@
 import React from 'react';
 
-// Visible FAQ backing the FAQPage JSON-LD in index.html. If you edit a question
-// or answer here, edit the matching entry in the #faq graph node too — Google
-// requires the structured data to match what the page actually shows.
+// Visible FAQ, and the single source for the FAQPage JSON-LD. The schema used
+// to be a hand-maintained copy of this array inside index.html — two copies of
+// the same six answers, with a comment asking whoever edited one to remember
+// the other. prerender.mjs now generates the JSON-LD from this export at build
+// time, so they cannot drift.
 
-const FAQS = [
+export const FAQS = [
   {
     q: 'What is med spa AI automation?',
     a: "Med spa AI automation is installed infrastructure that runs a practice's front-of-house revenue operations automatically: an AI receptionist that answers every call, missed-call recovery that texts back within seconds, multi-touch appointment reminders, and patient reactivation sequences. It is not advertising and it is not software you rent by the seat.",
@@ -34,19 +36,22 @@ const FAQS = [
 const FAQ: React.FC = () => {
   return (
     <section id="faq" className="bg-surface-2">
-      <div className="max-w-narrow mx-auto px-10 py-20">
-        <div className="text-center mb-12">
-          <div className="text-[11px] tracking-[0.16em] uppercase text-muted-2 font-semibold mb-3.5">
-            Common questions
+      <div className="max-w-narrow mx-auto px-5 sm:px-8 lg:px-10 py-16 lg:py-20">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 lg:mb-12">
+          <div>
+            <div className="text-[11px] tracking-[0.16em] uppercase text-muted-2 font-semibold mb-3.5">
+              Common questions
+            </div>
+            <h2 className="font-serif font-normal text-[32px] sm:text-4xl md:text-[44px] tracking-[-0.01em] text-navy leading-[1.12]">
+              Med spa AI automation, answered
+            </h2>
           </div>
-          <h2 className="font-serif font-normal text-4xl md:text-[44px] tracking-[-0.01em] text-navy leading-[1.12]">
-            Med spa AI automation, <span className="text-teal">answered</span>
-          </h2>
+          <p className="text-[13px] text-muted sm:text-right sm:pb-2 flex-shrink-0">Six questions we get on every call.</p>
         </div>
 
         <div className="flex flex-col gap-4">
           {FAQS.map((item) => (
-            <div key={item.q} className="bg-white rounded-lg p-8 shadow-row">
+            <div key={item.q} className="bg-white rounded-lg p-6 sm:p-8 shadow-row">
               <h3 className="text-[17px] font-bold text-navy tracking-[-0.01em] mb-3">{item.q}</h3>
               <p className="text-[15px] leading-[1.7] text-ink-2">{item.a}</p>
             </div>

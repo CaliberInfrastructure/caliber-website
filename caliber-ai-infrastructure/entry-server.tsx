@@ -12,3 +12,7 @@ import App from './App';
 export function render(): string {
   return renderToString(<App />);
 }
+
+// Re-exported so prerender.mjs can generate the FAQPage JSON-LD from the same
+// array the visible FAQ renders from, instead of a second copy in index.html.
+export { FAQS } from './components/FAQ';

@@ -30,4 +30,8 @@ export interface CalculationResults {
   recoveryMonthly: number;
   recoveryAnnual: number;
   roi: number;
+  /** True when the sanity ceiling bound the result, so the UI can say so. */
+  leakageCapped: boolean;
+  /** False below the flagship's 10x floor — show a qualification message. */
+  meetsFlagshipFloor: boolean;
 }

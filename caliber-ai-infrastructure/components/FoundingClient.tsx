@@ -1,4 +1,5 @@
 import React from 'react';
+import { Check, ArrowRight } from './icons';
 
 // Replaces the previous testimonial section. Caliber has no clients yet, so
 // there are no client results to show — this states that plainly and puts the
@@ -21,44 +22,49 @@ const WHAT_WE_ASK = [
 const FoundingClient: React.FC = () => {
   return (
     <section id="founding" className="bg-white">
-      <div className="max-w-container mx-auto px-10 py-20">
-        <div className="text-center mb-12">
-          <div className="text-[11px] tracking-[0.16em] uppercase text-muted-2 font-semibold mb-3.5">
-            Founding client program
+      <div className="max-w-container mx-auto px-5 sm:px-8 lg:px-10 py-16 lg:py-20">
+        {/* Off-centre head. The accent-word-in-heading move is gone here — it
+            appeared six times down the page and is one of the loudest
+            generated-page tells. */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-6 lg:gap-16 lg:items-end mb-11 lg:mb-12">
+          <div>
+            <div className="text-[11px] tracking-[0.16em] uppercase text-muted-2 font-semibold mb-3.5">
+              Founding client program
+            </div>
+            <h2 className="font-serif font-normal text-[32px] sm:text-4xl md:text-[44px] tracking-[-0.01em] text-navy leading-[1.12]">
+              We're taking on our first South Florida med spas
+            </h2>
           </div>
-          <h2 className="font-serif font-normal text-4xl md:text-[44px] tracking-[-0.01em] text-navy leading-[1.12] mb-6">
-            We're taking on our <span className="text-teal">first</span> South Florida med spas
-          </h2>
-          <p className="text-[17px] leading-[1.65] text-ink-2 max-w-[680px] mx-auto">
-            Caliber is newly launched, and we don't have client testimonials yet — so we're not going to
+          <p className="text-[16px] sm:text-[17px] leading-[1.65] text-ink-2 lg:pb-2 lg:border-l lg:border-hairline-2 lg:pl-8">
+            Caliber is newly launched and we don't have client testimonials yet — so we're not going to
             show you any. What we can show you is the system itself, running live, on a call you book
-            below. The founding client program is how we trade a better price for the proof we don't have yet.
+            below. The founding client program trades a better price for the proof we don't have yet.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
-          <div className="bg-surface-2 rounded-lg p-[34px]">
+          <div className="bg-surface-2 rounded-lg p-7 sm:p-[34px]">
             <div className="text-[11px] tracking-[0.16em] uppercase text-teal-deep font-semibold mb-[22px]">
               What you get
             </div>
             <ul className="flex flex-col gap-4">
               {WHAT_YOU_GET.map((item) => (
                 <li key={item} className="flex items-start gap-3.5">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-wash flex items-center justify-center mt-0.5 text-teal-deep text-xs font-bold">✓</span>
+                  <span aria-hidden="true" className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-wash flex items-center justify-center mt-0.5 text-teal-deep text-xs"><Check /></span>
                   <span className="text-[14.5px] leading-[1.55] text-ink-2">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="bg-surface-2 rounded-lg p-[34px]">
+          <div className="bg-surface-2 rounded-lg p-7 sm:p-[34px]">
             <div className="text-[11px] tracking-[0.16em] uppercase text-muted font-semibold mb-[22px]">
               What we ask in return
             </div>
             <ul className="flex flex-col gap-4 mb-7">
               {WHAT_WE_ASK.map((item) => (
                 <li key={item} className="flex items-start gap-3.5">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-hairline flex items-center justify-center mt-0.5 text-ink-3 text-xs font-bold">→</span>
+                  <span aria-hidden="true" className="flex-shrink-0 w-6 h-6 rounded-full bg-hairline flex items-center justify-center mt-0.5 text-ink-3 text-xs"><ArrowRight /></span>
                   <span className="text-[14.5px] leading-[1.55] text-ink-2">{item}</span>
                 </li>
               ))}
@@ -70,7 +76,7 @@ const FoundingClient: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-navy rounded-lg px-9 py-8 flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+        <div className="bg-navy rounded-lg px-7 sm:px-9 py-7 sm:py-8 flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
           <div className="flex-1">
             <div className="text-[11px] tracking-[0.16em] uppercase text-teal-light font-semibold mb-2.5">
               What we can prove today
@@ -85,7 +91,7 @@ const FoundingClient: React.FC = () => {
             href="#demo"
             className="flex-none inline-flex items-center justify-center gap-2 bg-teal text-white text-[14.5px] font-semibold px-7 py-[15px] rounded-sm hover:bg-teal-deep transition"
           >
-            Hear it live <span>→</span>
+            Hear it live <ArrowRight />
           </a>
         </div>
       </div>

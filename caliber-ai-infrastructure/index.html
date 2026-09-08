@@ -12,6 +12,7 @@
 
     <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Caliber Infrastructure">
     <meta property="og:url" content="https://www.caliberinfrastructure.com/">
     <meta property="og:title" content="AI Automation for Med Spas in South Florida | Caliber Infrastructure">
@@ -32,7 +33,10 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": ["Organization", "ProfessionalService"],
+          "@type": [
+            "Organization",
+            "ProfessionalService"
+          ],
           "@id": "https://www.caliberinfrastructure.com/#organization",
           "name": "Caliber Infrastructure",
           "legalName": "Caliber Infrastructure LLC",
@@ -61,13 +65,34 @@
             "addressCountry": "US"
           },
           "areaServed": [
-            { "@type": "AdministrativeArea", "name": "South Florida" },
-            { "@type": "City", "name": "Miami" },
-            { "@type": "AdministrativeArea", "name": "Miami-Dade County" },
-            { "@type": "City", "name": "Fort Lauderdale" },
-            { "@type": "AdministrativeArea", "name": "Broward County" },
-            { "@type": "City", "name": "Boca Raton" },
-            { "@type": "AdministrativeArea", "name": "Palm Beach County" }
+            {
+              "@type": "AdministrativeArea",
+              "name": "South Florida"
+            },
+            {
+              "@type": "City",
+              "name": "Miami"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Miami-Dade County"
+            },
+            {
+              "@type": "City",
+              "name": "Fort Lauderdale"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Broward County"
+            },
+            {
+              "@type": "City",
+              "name": "Boca Raton"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Palm Beach County"
+            }
           ],
           "knowsAbout": [
             "Med spa AI automation",
@@ -76,7 +101,10 @@
             "Appointment reminder automation",
             "Patient reactivation"
           ],
-          "sameAs": ["https://www.instagram.com/caliberinfra/"]
+          "priceRange": "$997-$2000/month plus $3,500-$10,000 setup",
+          "sameAs": [
+            "https://www.instagram.com/caliberinfra/"
+          ]
         },
         {
           "@type": "WebSite",
@@ -84,106 +112,171 @@
           "url": "https://www.caliberinfrastructure.com/",
           "name": "Caliber Infrastructure",
           "inLanguage": "en-US",
-          "publisher": { "@id": "https://www.caliberinfrastructure.com/#organization" }
+          "publisher": {
+            "@id": "https://www.caliberinfrastructure.com/#organization"
+          }
         },
         {
           "@type": "WebPage",
           "@id": "https://www.caliberinfrastructure.com/#webpage",
           "url": "https://www.caliberinfrastructure.com/",
           "name": "AI Automation for Med Spas in South Florida | Caliber Infrastructure",
-          "isPartOf": { "@id": "https://www.caliberinfrastructure.com/#website" },
-          "about": { "@id": "https://www.caliberinfrastructure.com/#organization" }
+          "isPartOf": {
+            "@id": "https://www.caliberinfrastructure.com/#website"
+          },
+          "about": {
+            "@id": "https://www.caliberinfrastructure.com/#organization"
+          }
         },
         {
           "@type": "Service",
           "name": "Med Spa AI Receptionist",
           "serviceType": "24/7 AI voice reception for med spas",
           "description": "An AI voice agent answers every inbound call around the clock, qualifies the caller, and books the appointment directly into the practice calendar — including nights, weekends, and while the front desk is with a patient.",
-          "provider": { "@id": "https://www.caliberinfrastructure.com/#organization" },
-          "areaServed": { "@type": "AdministrativeArea", "name": "South Florida" }
+          "provider": {
+            "@id": "https://www.caliberinfrastructure.com/#organization"
+          },
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "South Florida"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "2000",
+              "priceCurrency": "USD",
+              "unitText": "MONTH",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": 1,
+                "unitCode": "MON"
+              }
+            },
+            "availability": "https://schema.org/InStock",
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "South Florida"
+            },
+            "seller": {
+              "@id": "https://www.caliberinfrastructure.com/#organization"
+            }
+          }
         },
         {
           "@type": "Service",
           "name": "Missed-Call Recovery Automation",
           "serviceType": "Missed-call text-back automation for med spas",
           "description": "Detects an unanswered call and sends an automated text back within about 60 seconds, re-opening the conversation before the caller books with another practice.",
-          "provider": { "@id": "https://www.caliberinfrastructure.com/#organization" },
-          "areaServed": { "@type": "AdministrativeArea", "name": "South Florida" }
+          "provider": {
+            "@id": "https://www.caliberinfrastructure.com/#organization"
+          },
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "South Florida"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "997",
+              "priceCurrency": "USD",
+              "unitText": "MONTH",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": 1,
+                "unitCode": "MON"
+              }
+            },
+            "availability": "https://schema.org/InStock",
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "South Florida"
+            },
+            "seller": {
+              "@id": "https://www.caliberinfrastructure.com/#organization"
+            }
+          }
         },
         {
           "@type": "Service",
           "name": "Appointment Reminder Automation",
           "serviceType": "Multi-touch appointment reminder automation for med spas",
           "description": "A fixed reminder cadence at 72 hours, 24 hours, 3 hours, and 1 hour before the appointment, so patients confirm, reschedule, or cancel in time for the slot to be filled.",
-          "provider": { "@id": "https://www.caliberinfrastructure.com/#organization" },
-          "areaServed": { "@type": "AdministrativeArea", "name": "South Florida" }
+          "provider": {
+            "@id": "https://www.caliberinfrastructure.com/#organization"
+          },
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "South Florida"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "997",
+              "priceCurrency": "USD",
+              "unitText": "MONTH",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": 1,
+                "unitCode": "MON"
+              }
+            },
+            "availability": "https://schema.org/InStock",
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "South Florida"
+            },
+            "seller": {
+              "@id": "https://www.caliberinfrastructure.com/#organization"
+            }
+          }
         },
         {
           "@type": "Service",
           "name": "Patient Reactivation Automation",
           "serviceType": "Dormant patient reactivation automation for med spas",
           "description": "Automated, segmented outreach that re-engages past patients by treatment and recency, working the dormant list continuously in the background.",
-          "provider": { "@id": "https://www.caliberinfrastructure.com/#organization" },
-          "areaServed": { "@type": "AdministrativeArea", "name": "South Florida" }
-        },
-        {
-          "@type": "FAQPage",
-          "@id": "https://www.caliberinfrastructure.com/#faq",
-          "isPartOf": { "@id": "https://www.caliberinfrastructure.com/#webpage" },
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is med spa AI automation?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Med spa AI automation is installed infrastructure that runs a practice's front-of-house revenue operations automatically: an AI receptionist that answers every call, missed-call recovery that texts back within seconds, multi-touch appointment reminders, and patient reactivation sequences. It is not advertising and it is not software you rent by the seat."
+          "provider": {
+            "@id": "https://www.caliberinfrastructure.com/#organization"
+          },
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "South Florida"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "1300",
+              "priceCurrency": "USD",
+              "unitText": "MONTH",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": 1,
+                "unitCode": "MON"
               }
             },
-            {
-              "@type": "Question",
-              "name": "What does an AI receptionist for a med spa do?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "An AI receptionist answers every incoming call 24/7, captures what the caller wants — treatment, preferred time, new or returning — and books the appointment directly into the live calendar, then sends a confirmation. Unlike an answering service it completes the booking rather than taking a message."
-              }
+            "availability": "https://schema.org/InStock",
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "South Florida"
             },
-            {
-              "@type": "Question",
-              "name": "How does automation reduce no-shows?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Most no-shows come from a missing reminder, not a flaky patient. Automation sends a fixed cadence of reminders at 72 hours, 24 hours, 3 hours, and 1 hour before the appointment. Every touch is a chance to confirm, reschedule, or cancel in time for the slot to be refilled — and it goes out every time, without anyone remembering to send it."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Does Caliber serve med spas outside South Florida?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Caliber Infrastructure is based in and focused on South Florida — Miami-Dade, Broward, and Palm Beach. The systems themselves are portable, but the specialization and local support are built around the South Florida med spa market."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do I have to replace my front desk staff?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No. AI automation augments your front desk, it does not replace it. The system handles overflow calls, after-hours inquiries, reminders, and reactivation — the repetitive, easy-to-drop tasks — so your team can focus on the patients in front of them."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Does this work with my existing CRM and booking system?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. The automation is built to connect with the phone, calendar, and CRM you already use rather than forcing a rip-and-replace. The systems integrate around your existing stack."
-              }
+            "seller": {
+              "@id": "https://www.caliberinfrastructure.com/#organization"
             }
-          ]
+          }
         }
       ]
     }
     </script>
+
+    <!--FAQ_JSONLD--><!-- generated at build time from components/FAQ.tsx by prerender.mjs -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -198,9 +291,37 @@
 }
 </script>
 </head>
-<body class="bg-white text-ink font-sans overflow-x-hidden">
+<body class="bg-white text-ink font-sans overflow-x-clip">
     <div id="root"></div>
 <script type="module" src="/index.tsx"></script>
-<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a4fd176fb32070603baaa17" data-source="WEB_USER"></script>
+<!-- GoHighLevel chat widget. Carries the A2P 10DLC opt-in snippet, so it must
+     load on every page view — but it was auto-opening over the hero copy on a
+     phone before the visitor had read a sentence. Loading is deferred until the
+     first scroll or interaction, with an 8s backstop so it always arrives. The
+     auto-open delay itself is a setting inside the GHL widget config; this only
+     moves when the widget appears. -->
+<script>
+  (function () {
+    var loaded = false;
+    function loadWidget() {
+      if (loaded) return;
+      loaded = true;
+      cleanup();
+      var s = document.createElement('script');
+      s.src = 'https://widgets.leadconnectorhq.com/loader.js';
+      s.async = true;
+      s.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+      s.setAttribute('data-widget-id', '6a4fd176fb32070603baaa17');
+      s.setAttribute('data-source', 'WEB_USER');
+      document.body.appendChild(s);
+    }
+    var events = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
+    function cleanup() {
+      events.forEach(function (e) { window.removeEventListener(e, loadWidget); });
+    }
+    events.forEach(function (e) { window.addEventListener(e, loadWidget, { passive: true, once: true }); });
+    setTimeout(loadWidget, 8000);
+  })();
+</script>
 </body>
 </html>
