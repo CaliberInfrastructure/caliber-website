@@ -5,7 +5,6 @@ import Calculator from './components/Calculator';
 import ValueStack from './components/ValueStack';
 import GuaranteeSection from './components/GuaranteeSection';
 import Pricing from './components/Pricing';
-import FoundingClient from './components/FoundingClient';
 import FounderSection from './components/FounderSection';
 import FAQ from './components/FAQ';
 import DemoBooking from './components/DemoBooking';
@@ -24,6 +23,9 @@ const NAV_LINKS = [
   { href: '#tiers', label: 'Pricing' },
   { href: '#about', label: 'Methodology' },
 ];
+
+/** Named in the hero, detailed in the Diagnosis section below it. */
+const HERO_LEAKS = ['Unanswered calls', 'No-shows', 'Dormant patient lists'];
 
 const PHONE_DISPLAY = '(786) 853-7587';
 const PHONE_HREF = 'tel:+17868537587';
@@ -71,9 +73,6 @@ const App: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-3 sm:gap-5 ml-auto">
-            <a href={PHONE_HREF} className="hidden sm:block text-[13.5px] font-semibold text-navy hover:text-teal transition tabular-nums">
-              {PHONE_DISPLAY}
-            </a>
             <a href="#demo" className="bg-teal text-white text-[13px] font-semibold px-[18px] sm:px-[22px] py-[11px] rounded-xl hover:bg-teal-deep transition whitespace-nowrap">
               Free Demo
             </a>
@@ -104,7 +103,6 @@ const App: React.FC = () => {
                 {l.label}
               </a>
             ))}
-            <a href={PHONE_HREF} className="py-3 text-[15px] font-semibold text-navy sm:hidden">{PHONE_DISPLAY}</a>
           </div>
         </div>
       </nav>
@@ -122,21 +120,28 @@ const App: React.FC = () => {
                 Your med spa is quietly losing{' '}
                 <span className="text-teal font-medium whitespace-nowrap">{LEAK_RANGE_MONTHLY}/mo</span>
               </h1>
-              <p className="text-[17px] sm:text-[18px] leading-[1.62] text-ink-2 max-w-[560px] mb-5">
+              <p className="text-[17px] sm:text-[18px] leading-[1.62] text-ink-2 max-w-[540px] mb-6">
                 <strong className="text-navy font-bold">Caliber Infrastructure builds AI automation systems for med spas in South Florida.</strong>{' '}
-                We install the infrastructure that stops med spas from losing revenue to unanswered calls,
-                no-shows, and dormant patient lists — without adding staff. Our systems answer every call
-                24/7, recover missed calls with an automated text within 60 seconds, send multi-touch
-                appointment reminders that cut no-shows, and re-engage past patients on autopilot.
+                We answer every call 24/7, text back missed calls in 60 seconds, and cut no-shows with
+                automated reminders. No new staff, no new software for your team to learn.
               </p>
-              <p className="text-[16px] leading-[1.65] text-ink-3 max-w-[560px] mb-8">
-                In our modeling, roughly one in three calls to a busy med spa goes unanswered; at a
-                typical $500 ticket, that is five figures in lost revenue every month. Caliber captures
-                it. We are not a marketing agency and we are not software you rent — we build the
-                automation once, you own your accounts and your data, and we keep it running. Based in
-                South Florida, serving med spas across Miami, Fort Lauderdale, Boca Raton, and Palm
-                Beach doing $50k–$100k+ per month.
-              </p>
+
+              {/* The three leaks, as a list rather than a second paragraph. The
+                  detail behind each one is the Diagnosis section directly below;
+                  the hero only has to name them. */}
+              <div className="mb-8">
+                <div className="text-[11px] tracking-[0.14em] uppercase text-muted-2 font-semibold mb-3">
+                  The three leaks we close
+                </div>
+                <ul className="flex flex-wrap gap-x-7 gap-y-2.5">
+                  {HERO_LEAKS.map((leak) => (
+                    <li key={leak} className="flex items-center gap-2.5 text-[15px] font-semibold text-ink-2">
+                      <span aria-hidden="true" className="w-1.5 h-1.5 bg-teal rounded-full flex-shrink-0"></span>
+                      {leak}
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <div className="flex flex-col sm:flex-row gap-[13px] mb-6">
                 <a href="#demo" className="inline-flex items-center justify-center gap-2 bg-teal text-white text-[14.5px] font-semibold px-7 py-[15px] rounded-sm shadow-cta hover:bg-teal-deep transition text-center">
                   Hear it answer a call <ArrowRight />
@@ -145,7 +150,12 @@ const App: React.FC = () => {
                   Run the revenue audit
                 </a>
               </div>
-              <div className="text-[13px] text-muted font-medium">30-minute live walkthrough · 60-second booking · no card required</div>
+              <div className="text-[13px] text-muted font-medium">
+                30-minute live walkthrough · 60-second booking · no card required
+              </div>
+              <div className="text-[13px] text-muted-2 mt-2">
+                Serving med spas in Miami, Fort Lauderdale, Boca Raton, and Palm Beach.
+              </div>
             </div>
 
             {/* Elevated ROI card — every figure below comes from calculateROI() */}
@@ -210,7 +220,6 @@ const App: React.FC = () => {
         <ValueStack />
         <GuaranteeSection />
         <Pricing />
-        <FoundingClient />
         <FounderSection />
         {/* FAQ — visible source for the FAQPage schema in index.html */}
         <FAQ />
@@ -269,8 +278,8 @@ const App: React.FC = () => {
               previously the faintest type on the page at 3.85:1. */}
           <div className="border-t border-navy-line pt-6 flex flex-wrap gap-4 justify-between items-start">
             <p className="text-[12.5px] leading-[1.7] text-muted-4 max-w-[720px]">
-              Revenue figures on this site — including the revenue-audit calculator, the recovery card
-              in the hero, and the {LEAK_RANGE_MONTHLY}/mo range — are illustrative models built on
+              Revenue figures on this site (including the revenue-audit calculator, the recovery card
+              in the hero, and the {LEAK_RANGE_MONTHLY}/mo range) are illustrative models built on
               industry averages. They are not client results and not a promise of performance. Any
               guarantee is governed solely by the signed Caliber Guarantee terms. See our{' '}
               <a href="/terms" className="text-onnavy-3 hover:text-white transition underline underline-offset-2">Terms of Service</a>.

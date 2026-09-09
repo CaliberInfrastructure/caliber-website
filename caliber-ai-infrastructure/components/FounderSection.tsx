@@ -1,11 +1,11 @@
 
 import React from 'react';
-import { Cross, Diamond } from './icons';
+import { Diamond } from './icons';
 
 const METHODOLOGY_ITEMS = [
   {
     title: "Infrastructure, Not Tools",
-    desc: "We don't hand you software and wish you luck. We build a complete, interconnected system—then hand you the keys to a machine that runs itself.",
+    desc: "We don't hand you software and wish you luck. We build a complete, interconnected system, then hand you the keys to a machine that runs itself.",
   },
   {
     title: "Engineered, Not Templated",
@@ -14,18 +14,11 @@ const METHODOLOGY_ITEMS = [
   {
     // Previously "Owned, Not Rented" / "Our automation infrastructure belongs
     // to us." That claimed ownership of a stack built on GoHighLevel, Retell,
-    // n8n and Supabase — GHL being a white-label CRM resold as sub-accounts —
+    // n8n and Supabase (GHL being a white-label CRM resold as sub-accounts)
     // and it contradicted the hero, which tells the visitor they own it.
     title: "Yours, Not Rented",
-    desc: "We own the integration layer — the architecture, the logic, the build. You own your accounts, your data, and your patient list. If we ever part ways, the systems keep running and nothing walks out the door with us.",
+    desc: "You own your accounts, your data, and your patient list, and they stay with you whatever happens between us. Caliber builds and operates the integration layer that connects them, so nothing about your practice is locked inside software you cannot reach.",
   },
-];
-
-const WHAT_WE_NOT = [
-  { title: "Not a marketing agency", desc: "promising vague \"growth\"" },
-  { title: "Not a SaaS platform", desc: "requiring your team to learn new software" },
-  { title: "Not a consultant", desc: "selling strategy without implementation" },
-  { title: "Not a call center", desc: "with scripts and hold music" },
 ];
 
 const FounderSection: React.FC = () => {
@@ -44,7 +37,7 @@ const FounderSection: React.FC = () => {
             <p className="text-[16px] sm:text-[17px] leading-[1.65] text-ink-2 mb-11">
               Most "automation agencies" sell you tools and leave you to figure it out. Caliber is
               different. We apply the same rigorous methodology used to build automation systems
-              inside large enterprises — then configure it specifically for your practice.
+              inside large enterprises, then configure it specifically for your practice.
             </p>
 
             <div className="flex flex-col gap-8">
@@ -64,28 +57,11 @@ const FounderSection: React.FC = () => {
 
           {/* Right */}
           <div className="flex flex-col gap-6">
-            {/* What we're not */}
-            <div className="bg-white border border-hairline-3 rounded-xl p-7 sm:p-10">
-              <h3 className="text-[11px] tracking-[0.16em] uppercase text-muted-2 font-semibold mb-7">What we're not</h3>
-              <div className="flex flex-col gap-[22px]">
-                {WHAT_WE_NOT.map((item, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <span aria-hidden="true" className="w-[30px] h-[30px] bg-terracotta/10 rounded-[9px] flex items-center justify-center text-terracotta-deep text-sm flex-shrink-0 mt-px">
-                      <Cross />
-                    </span>
-                    <p className="text-[15px] sm:text-base leading-[1.45]">
-                      <span className="font-bold text-navy">{item.title}</span> <span className="text-muted">{item.desc}</span>
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Background. The founder is named here now. Selling a $10,000
-                build on trust, with no clients yet, while the About section
-                said only "an AI automation engineer" was the weakest part of
-                the page — the name was in the JSON-LD but nowhere a human
-                could read it. */}
+            {/* Background. The founder stays named: selling a $10,000 build on
+                trust needs a reachable human, and the name was previously in the
+                JSON-LD but nowhere a visitor could read it. The surrounding copy
+                is company voice rather than solo-operator voice, so it survives
+                the first hire instead of having to be rewritten. */}
             <div className="bg-navy rounded-xl p-7 sm:p-10">
               <h3 className="text-[11px] tracking-[0.16em] uppercase text-onnavy-3 font-semibold mb-[22px]">Who builds it</h3>
               <div className="flex items-center gap-4 mb-5">
@@ -98,10 +74,11 @@ const FounderSection: React.FC = () => {
                 </div>
               </div>
               <p className="text-[14.5px] sm:text-[15px] leading-[1.65] text-onnavy mb-6">
-                Caliber is a one-person engineering shop by design. Mauro builds every system himself,
-                applying automation methodology from enterprise operations to the specific revenue
-                leaks of a med spa. You are not handed to an account manager — the person who builds
-                your infrastructure is the person who answers when you call.
+                Caliber is an engineering team built around a single vertical. We apply automation
+                methodology from enterprise operations to the specific revenue leaks of a med spa,
+                and we build and operate every system ourselves rather than reselling someone else's
+                software. Mauro leads every build, and you get a direct line to the people running
+                your infrastructure.
               </p>
               <div className="flex flex-wrap gap-x-5 gap-y-2 text-[13.5px] mb-7">
                 <a href="mailto:maurorousseau@caliberinfrastructure.com" className="text-teal-light font-semibold hover:text-white transition underline underline-offset-2 break-all">

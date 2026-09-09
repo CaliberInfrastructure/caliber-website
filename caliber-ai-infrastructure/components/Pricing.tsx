@@ -5,7 +5,9 @@ import { ServiceTier } from '../types';
 import { Check, ArrowRight, Chevron } from './icons';
 
 const Pricing: React.FC = () => {
-  const [showAllTiers, setShowAllTiers] = useState(false);
+  // Open on arrival. A prospect who does not fit the flagship should see the
+  // tier that does fit without having to discover a disclosure control first.
+  const [showAllTiers, setShowAllTiers] = useState(true);
   const [pricingOption, setPricingOption] = useState<'A' | 'B'>('A');
 
   const flagship = TIERS[ServiceTier.FULL_AUTONOMY];
@@ -14,12 +16,12 @@ const Pricing: React.FC = () => {
 
   const priceLabel = pricingOption === 'A' ? 'AI Front Desk Installation' : 'Zero Barrier Entry';
   const priceBig = pricingOption === 'A' ? '$2,000' : '$3,500';
-  const priceSub = pricingOption === 'A' ? '+ $10,000 Custom AI Infrastructure Build' : '$0 setup — 12-month minimum commitment';
-  const priceNote = pricingOption === 'A' ? '30-day build guarantee — refund if not live' : 'No upfront investment required';
+  const priceSub = pricingOption === 'A' ? '+ $10,000 Custom AI Infrastructure Build' : '$0 setup, 12-month minimum commitment';
+  const priceNote = pricingOption === 'A' ? '30-day build guarantee, refunded if not live' : 'No upfront investment required';
   const commitment = pricingOption === 'A' ? 'Monthly' : '12-month minimum';
   const priceFraming = pricingOption === 'A'
     ? 'Total 12-month cost: $34k, or $2,833/mo all-in once the build is spread across the year.'
-    : 'Option B removes the upfront decision entirely. Total 12-month cost: $42k vs $34k on Option A — your call.';
+    : 'Option B removes the upfront decision entirely. Total 12-month cost: $42k vs $34k on Option A. Your call.';
 
   const lowerTiers = [foundation, growth];
 
@@ -42,15 +44,16 @@ const Pricing: React.FC = () => {
                   display type is one of the most reliable generated-page tells. */}
               <p className="font-serif text-[20px] sm:text-[22px] text-onnavy-3 mb-6">“The last hire you’ll ever make”</p>
 
-              {/* The old copy claimed $6,250/week and then "by the time you read
-                  this sentence, another $10 just walked out" — $6,250/week is
-                  $0.62 a minute, so $10 takes sixteen minutes. The device broke
-                  under a second's arithmetic, so it's gone, and the figure is
-                  now the same range the rest of the page uses. */}
+              {/* States the revenue band the tier is priced and guaranteed for.
+                  "A practice your size" named no size at all, and the $100k+/mo
+                  floor is not arbitrary: below roughly $94k/mo the model's 30%
+                  leakage ceiling caps recovery under the 10x floor this tier
+                  claims, so the calculator would disqualify anyone the copy
+                  invited. See roiCalculator.ts. */}
               <p className="text-[15px] sm:text-base leading-[1.65] text-onnavy mb-9 max-w-[520px]">
-                A practice your size is quietly losing {LEAK_RANGE_MONTHLY} a month to calls nobody
-                answered and appointments nobody confirmed. Not to competitors who outspent you — to
-                a phone that rang at 7pm.
+                Built for South Florida med spas doing $100k+/mo. At that volume a practice is
+                quietly losing {LEAK_RANGE_MONTHLY} a month to calls nobody answered and
+                appointments nobody confirmed.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-9">
@@ -90,7 +93,7 @@ const Pricing: React.FC = () => {
                     aria-pressed={pricingOption === 'A'}
                     className={`flex-1 py-[11px] px-1 rounded-lg text-[10.5px] sm:text-[11px] font-bold tracking-[0.04em] uppercase transition ${pricingOption === 'A' ? 'bg-white text-navy' : 'bg-transparent text-onnavy-3 hover:text-white'}`}
                   >
-                    Option A — Standard
+                    Option A · Standard
                   </button>
                   <button
                     type="button"
@@ -98,7 +101,7 @@ const Pricing: React.FC = () => {
                     aria-pressed={pricingOption === 'B'}
                     className={`flex-1 py-[11px] px-1 rounded-lg text-[10.5px] sm:text-[11px] font-bold tracking-[0.04em] uppercase transition ${pricingOption === 'B' ? 'bg-white text-navy' : 'bg-transparent text-onnavy-3 hover:text-white'}`}
                   >
-                    Option B — Zero Barrier
+                    Option B · Zero Barrier
                   </button>
                 </div>
 
@@ -143,7 +146,10 @@ const Pricing: React.FC = () => {
 
         {/* Lower tiers toggle */}
         <div className="text-center mt-12 mb-2">
-          <p className="text-sm text-ink-3 font-medium tracking-[0.01em] mb-4">Not sure which is right for you? Most South Florida med spas doing $100k+/mo choose Full Autonomy.</p>
+          <p className="text-sm text-ink-3 font-medium tracking-[0.01em] mb-4">
+            Full Autonomy is built for practices doing $100k+/mo. Below that, a stepping-stone tier
+            is the honest fit.
+          </p>
           <button
             type="button"
             onClick={() => setShowAllTiers(!showAllTiers)}

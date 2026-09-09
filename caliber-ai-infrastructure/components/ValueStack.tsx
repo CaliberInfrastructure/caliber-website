@@ -75,7 +75,7 @@ const ValueStack: React.FC = () => {
             no longer repeats this arrangement six times. */}
         <div className="text-center mb-12">
           <div className="text-xs tracking-[0.08em] uppercase text-teal-deep font-semibold mb-3.5">
-            The Full Autonomy System™ — what's included
+            The Full Autonomy System · what's included
           </div>
           {/* The heading figure is FLAGSHIP_VALUE_MONTHLY, which is the sum of
               the rows printed underneath it. It used to read $16,100 — the
@@ -85,9 +85,12 @@ const ValueStack: React.FC = () => {
           <h2 className="font-serif font-normal text-[30px] sm:text-4xl md:text-[42px] tracking-[-0.01em] text-navy leading-[1.14] mb-3.5">
             {money(FLAGSHIP_VALUE_MONTHLY)}/mo in value. <span className="text-teal">$2,000/mo investment.</span>
           </h2>
-          <p className="text-[15px] leading-[1.6] text-ink-3 max-w-[560px] mx-auto">
-            Every component has a standalone value and a specific revenue leak it eliminates. The
-            figures below add up to the number in the heading — check it.
+          <p className="text-[15px] leading-[1.6] text-ink-3 max-w-[580px] mx-auto">
+            Six core systems and five bonuses. Priced separately they run{' '}
+            <strong className="text-navy font-semibold">{money(FLAGSHIP_VALUE_MONTHLY)}/mo</strong>. Packaged
+            as the Full Autonomy System you pay{' '}
+            <strong className="text-navy font-semibold">$2,000/mo</strong>, and every component below
+            names the revenue leak it closes.
           </p>
         </div>
 
@@ -147,6 +150,9 @@ const ValueStack: React.FC = () => {
               <div className="text-[11px] tracking-[0.08em] uppercase text-muted-2 font-semibold mb-2">Your Investment</div>
               <div className="font-serif font-medium text-[30px] sm:text-[34px] tracking-[-0.02em] text-navy">$2,000/mo</div>
               <div className="text-[13px] text-muted font-medium mt-1">+ $10,000 build</div>
+              <div className="text-[13px] text-teal-deep font-semibold mt-2">
+                {money(FLAGSHIP_VALUE_MONTHLY - 2000)}/mo less than buying the parts separately
+              </div>
             </div>
             <div aria-hidden="true" className="hidden md:flex w-[52px] h-[52px] bg-teal rounded-full items-center justify-center text-white text-[20px] mx-auto">
               <ArrowRight />

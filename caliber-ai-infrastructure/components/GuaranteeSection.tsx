@@ -38,24 +38,22 @@ const GuaranteeSection: React.FC = () => {
           <div className="bg-white/[0.06] border border-navy-line rounded-md p-6 sm:p-8 mb-[18px]">
             <p className="font-serif text-[19px] sm:text-[21px] leading-[1.55] text-onnavy-4 text-center">
               “We will recover a minimum of <strong className="text-white font-medium">{GUARANTEE_AMOUNT_LABEL} in verifiable
-              revenue</strong> within your first {GUARANTEE_WINDOW_DAYS} days of going live — on either payment
+              revenue</strong> within your first {GUARANTEE_WINDOW_DAYS} days of going live, on either payment
               option. If we don’t, we continue operating your full infrastructure at no charge, month
               by month, until we hit that number.”
             </p>
           </div>
 
-          {/* Secondary guarantee — now carries the same carrier-approval
-              carve-out as the 90-day clock. Without it the setup-fee refund was
-              exposed to an A2P registration queue Caliber does not control. */}
+          {/* Secondary guarantee. The carrier-approval carve-out that used to
+              sit inside this quote is now in the terms paragraph below, which
+              applies it to both windows. */}
           <div className="bg-teal-light/[0.06] border border-navy-line3 rounded-md px-6 sm:px-7 py-6 flex gap-4 items-start">
             <span aria-hidden="true" className="w-[30px] h-[30px] bg-teal-light/[0.12] rounded-[9px] flex items-center justify-center text-teal-light text-sm flex-shrink-0 mt-0.5">
               <Check />
             </span>
             <p className="text-[14.5px] sm:text-[15px] leading-[1.6] text-onnavy-teal">
               “If your system isn’t live and capturing revenue within 30 days of kickoff, we refund
-              your setup fee — no questions asked. As with the 90-day clock, that window excludes time
-              spent waiting on carrier approval of SMS, which typically takes one to two weeks and is
-              outside anyone’s control.”
+              your setup fee. No questions asked.”
             </p>
           </div>
 
@@ -64,9 +62,11 @@ const GuaranteeSection: React.FC = () => {
           <p className="text-[12.5px] leading-[1.7] text-onnavy-3 mt-7 text-center max-w-[640px] mx-auto">
             Terms in brief: “recovered” means source-tracked bookings attributed to Caliber systems in
             your dashboard, measured as revenue rather than profit. On the standard $2,000/mo plan
-            that threshold is 10× a month’s retainer. The 90-day clock starts when your systems are
-            live and tracking — including carrier approval of SMS. Eligibility depends on call and
-            lead volume. The full terms govern and are set out in your signed agreement; see our{' '}
+            that threshold is 10× a month’s retainer. Both windows, the 90-day guarantee and the
+            30-day build, start when your systems are live and tracking. Neither counts time spent
+            waiting on carrier approval of SMS, which typically takes one to two weeks and is outside
+            anyone’s control. Eligibility depends on call and lead volume. The full terms govern and
+            are set out in your signed agreement; see our{' '}
             <a href="/terms" className="text-onnavy-4 hover:text-white transition underline underline-offset-2">Terms of Service</a>.
           </p>
         </div>

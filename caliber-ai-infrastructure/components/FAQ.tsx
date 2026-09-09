@@ -13,19 +13,19 @@ export const FAQS = [
   },
   {
     q: 'What does an AI receptionist for a med spa do?',
-    a: 'An AI receptionist answers every incoming call 24/7, captures what the caller wants — treatment, preferred time, new or returning — and books the appointment directly into the live calendar, then sends a confirmation. Unlike an answering service it completes the booking rather than taking a message.',
+    a: 'An AI receptionist answers every incoming call 24/7, captures what the caller wants (treatment, preferred time, new or returning) and books the appointment directly into the live calendar, then sends a confirmation. Unlike an answering service it completes the booking rather than taking a message.',
   },
   {
     q: 'How does automation reduce no-shows?',
-    a: 'Most no-shows come from a missing reminder, not a flaky patient. Automation sends a fixed cadence of reminders at 72 hours, 24 hours, 3 hours, and 1 hour before the appointment. Every touch is a chance to confirm, reschedule, or cancel in time for the slot to be refilled — and it goes out every time, without anyone remembering to send it.',
+    a: 'Most no-shows come from a missing reminder, not a flaky patient. Automation sends a fixed cadence of reminders at 72 hours, 24 hours, 3 hours, and 1 hour before the appointment. Every touch is a chance to confirm, reschedule, or cancel in time for the slot to be refilled, and it goes out every time without anyone remembering to send it.',
   },
   {
     q: 'Does Caliber serve med spas outside South Florida?',
-    a: 'Caliber Infrastructure is based in and focused on South Florida — Miami-Dade, Broward, and Palm Beach. The systems themselves are portable, but the specialization and local support are built around the South Florida med spa market.',
+    a: 'Caliber Infrastructure is based in and focused on South Florida: Miami-Dade, Broward, and Palm Beach. The systems themselves are portable, but the specialization and local support are built around the South Florida med spa market.',
   },
   {
     q: 'Do I have to replace my front desk staff?',
-    a: 'No. AI automation augments your front desk, it does not replace it. The system handles overflow calls, after-hours inquiries, reminders, and reactivation — the repetitive, easy-to-drop tasks — so your team can focus on the patients in front of them.',
+    a: 'No. AI automation augments your front desk, it does not replace it. The system handles overflow calls, after-hours inquiries, reminders, and reactivation, the repetitive tasks that are easiest to drop, so your team can focus on the patients in front of them.',
   },
   {
     q: 'Does this work with my existing CRM and booking system?',

@@ -18,7 +18,7 @@ const PAIN_POINTS = [
     title: "Missed Calls That Never Convert",
     stat: "15–25 calls",
     sub: "Weekly, in our modeling",
-    desc: "Every unanswered call is a potential $400+ treatment walking to your competitor. We model a busy med spa missing 15–25 calls a week — $6,000–$10,000 in bookings that never happen.",
+    desc: "Every unanswered call is a potential $400+ treatment walking to your competitor. We model a busy med spa missing 15–25 calls a week, which is $6,000–$10,000 in bookings that never happen.",
   },
   {
     title: "20–30% No-Show Rates",
@@ -36,7 +36,7 @@ const PAIN_POINTS = [
     title: "Zero After-Hours Coverage",
     stat: "0 staff",
     sub: "Nights & Weekends",
-    desc: "Inquiries keep arriving after your team goes home. Those high-intent prospects get voicemail — and they don't leave messages. They call the next spa on the list.",
+    desc: "Inquiries keep arriving after your team goes home. Those high-intent prospects get voicemail, and they don't leave messages. They call the next spa on the list.",
   },
   {
     title: "Dormant Client Database",
@@ -91,7 +91,7 @@ const ProblemSection: React.FC = () => {
               </div>
               <h3 className="font-serif font-normal text-[26px] sm:text-[28px] text-white mb-3.5">Sound familiar?</h3>
               <p className="text-sm leading-[1.6] text-onnavy mb-6">
-                These aren't just problems — they're <span className="text-teal-light font-semibold">recoverable revenue</span>. The revenue audit below puts a number on yours.
+                Every one of these is <span className="text-teal-light font-semibold">recoverable revenue</span>. The revenue audit below puts a number on yours.
               </p>
             </div>
             <a href="#calculator" className="inline-flex items-center justify-center gap-2 text-center bg-teal text-white text-[13.5px] font-semibold py-3.5 rounded-sm hover:bg-teal-deep transition">

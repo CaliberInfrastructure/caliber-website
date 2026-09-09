@@ -12,7 +12,7 @@ const ANALYSIS_CARDS = [
 ];
 
 const WHAT_YOU_GET = [
-  '30-minute live walkthrough — not a pitch deck',
+  '30-minute live walkthrough, not a pitch deck',
   'Live ROI estimate built against your actual revenue numbers',
   'Straight answer on which tier fits (or if we\'re not a fit)',
   'No credit card, no obligation, no follow-up spam',
@@ -33,7 +33,7 @@ const DemoBooking: React.FC = () => {
               See the full system <span className="text-teal-light font-medium">live</span>, built to your numbers
             </h2>
             <p className="text-[16.5px] leading-[1.65] text-onnavy mb-11">
-              30-minute walkthrough of the complete Caliber infrastructure — AI receptionist, booking engine, no-show recovery, and revenue dashboard — running against your real revenue numbers. No pitch deck. No obligation.
+              30-minute walkthrough of the complete Caliber infrastructure (AI receptionist, booking engine, no-show recovery, and revenue dashboard) running against your real revenue numbers. No pitch deck. No obligation.
             </p>
 
             <div className="text-[10px] tracking-[0.16em] uppercase text-onnavy-2 font-semibold mb-6">What we'll walk through</div>

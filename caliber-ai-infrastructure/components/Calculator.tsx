@@ -23,8 +23,8 @@ const METHODOLOGY = [
     body: (
       <>
         Your monthly revenue is <strong className="text-navy font-bold">realized</strong> revenue, so
-        dividing it by your average ticket counts only the appointments that actually happened — a
-        no-show bills nothing. Dividing by <strong className="text-navy font-bold">(1 − your no-show rate)</strong> gets
+        dividing it by your average ticket counts only the appointments that actually happened,
+        since a no-show bills nothing. Dividing by <strong className="text-navy font-bold">(1 − your no-show rate)</strong> gets
         back to appointments <em>booked</em>, which is the population no-shows come out of. The
         <strong className="text-navy font-bold"> 50% factor</strong> then accounts for partial recovery through
         rebooks and last-minute fills that already happen organically.
@@ -207,8 +207,8 @@ const Calculator: React.FC = () => {
                   </div>
                   {results.leakageCapped && (
                     <p className="text-[11.5px] leading-[1.55] text-onnavy mt-3.5 border-t border-navy-line pt-3">
-                      Held at the model's ceiling of {LEAKAGE_CEILING_PCT * 100}% of monthly revenue —
-                      the components above add to more than that at these inputs.
+                      Held at the model's ceiling of {LEAKAGE_CEILING_PCT * 100}% of monthly revenue.
+                      The components above add to more than that at these inputs.
                     </p>
                   )}
                 </div>
@@ -247,8 +247,8 @@ const Calculator: React.FC = () => {
                         <div className="text-[11px] tracking-[0.06em] uppercase text-white font-semibold mb-1.5">Flagship fit</div>
                         <p className="text-[13px] leading-[1.5] text-white font-semibold">
                           At these volumes the flagship's {ROI_FLOOR_LABEL} math doesn't hold. A
-                          stepping-stone tier is the honest recommendation — we'll tell you which one
-                          on the demo.
+                          stepping-stone tier is the honest recommendation, and we'll tell you which
+                          one on the demo.
                         </p>
                       </>
                     )}

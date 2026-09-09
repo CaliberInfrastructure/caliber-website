@@ -48,7 +48,7 @@ export const CALCULATOR_DEFAULTS: RevenueCalculation = {
 
 /** Plain-language description of that input set, shown under the hero figure. */
 export const CALCULATOR_DEFAULTS_LABEL =
-  'Modeled at the revenue-audit defaults — a $100–175k/mo practice, $450 average ticket, 15 missed calls a week, 20% no-shows';
+  'Modeled at the revenue-audit defaults: a $100–175k/mo practice, $450 average ticket, 15 missed calls a week, 20% no-shows';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Stack component values.
@@ -74,7 +74,7 @@ export const CORE_STACK: StackItem[] = [
   { name: '24/7 AI Voice Reception',            monthly: 3500, recovers: '15–25 missed calls a week × $400 = $6k–$10k recovered' },
   { name: 'No-Show Elimination System',         monthly: 2000, recovers: '4–6 recovered appointments a week = $1,600–$2,400/mo' },
   { name: 'Dormant Client Reactivation Engine', monthly: 4000, recovers: '$8k–$12k from reactivated appointments' },
-  { name: 'Omni-Channel Lead Capture',          monthly: 1500, recovers: 'Web, social, and phone inquiries land in one queue — nothing falls through' },
+  { name: 'Omni-Channel Lead Capture',          monthly: 1500, recovers: 'Web, social, and phone inquiries land in one queue, so nothing falls through' },
   { name: 'Reputation Compounding System',      monthly: 1000, recovers: 'Every completed visit becomes a review request, and reviews become inbound' },
   { name: 'Staff Pre-Qualification Filter',     monthly: 1500, recovers: 'Your team only picks up the phone for people ready to book' },
 ];
@@ -133,11 +133,11 @@ export const TIERS: Record<ServiceTier, TierDetails> = {
     ]
   },
   [ServiceTier.FULL_AUTONOMY]: {
-    name: "Full Autonomy System™",
+    name: "Full Autonomy System",
     monthlyFee: 2000,
     setupFee: 10000,
-    description: "Our flagship — the one that comes with the guarantee.",
-    positioning: "Our flagship — the one that comes with the guarantee",
+    description: "Our flagship, and the only tier that carries the guarantee.",
+    positioning: "Built for practices doing $100k+/mo",
     valueMonthly: FLAGSHIP_VALUE_MONTHLY,
     features: [
       "24/7 AI Voice Reception",

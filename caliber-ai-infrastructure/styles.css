@@ -6,6 +6,15 @@
    Global base — previously inline <style> in index.html
    ───────────────────────────────────────────────────────────── */
 
+/* Tailwind's preflight ships `[hidden]{display:none}` at specificity (0,1,0),
+   which is exactly the specificity of a display utility like `.grid` or
+   `.flex` — and utilities are emitted later, so they win. Any panel toggled
+   with `hidden={!open}` that also carries a display class stayed on screen
+   permanently: the pricing tiers grid and the calculator's methodology panel
+   both did, so their buttons looked dead. Raising this one rule fixes every
+   such toggle at once instead of rewriting each into conditional rendering. */
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; }
 body { font-family: 'Hanken Grotesk', system-ui, sans-serif; }
 
